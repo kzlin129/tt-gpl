@@ -1,0 +1,12 @@
+Package: linux-kernel-2.6.28
+Priority: required
+Version: IPK_VERSION
+Architecture: IPK_ARCH
+Maintainer: support.tomtom.com
+Section: base
+Source: IPK_SOURCE
+Depends:
+Provides: linux-kernel
+Description: Linux kernel 2.6.28.
+License: GPLv2
+Action: UA

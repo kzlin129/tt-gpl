@@ -1,0 +1,26 @@
+# drivers/tomtom/lcm/Kconfig
+#
+# Copyright (C) 2012 TomTom BV <http://www.tomtom.com/>
+# Author: Will Lin <Will.Lin@tomtom.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as
+# published by the Free Software Foundation.
+
+menuconfig TOMTOM_LCM
+	default y
+	depends on TOMTOM_DRIVERS
+	bool "TomTom LCM drivers"
+	---help---
+          This option enables support for LCM.
+
+if TOMTOM_LCM
+
+config TOMTOM_LCM_LMS606KF01
+	tristate "Enable LMS606KF01 support"
+	default m
+	depends on SPI
+	help
+	  Support for LMS606KF01 LCM.
+
+endif # TOMTOM_HDR

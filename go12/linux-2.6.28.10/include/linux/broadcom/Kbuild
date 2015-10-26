@@ -1,0 +1,16 @@
+# Add sub-directories to export
+ifneq ($(wildcard $(srctree)/include/linux/broadcom/bcmring/Kbuild),)
+header-y += bcmring/
+endif
+ifneq ($(wildcard $(srctree)/include/linux/broadcom/dd/Kbuild),)
+header-y += dd/
+endif
+ifneq ($(wildcard $(srctree)/include/linux/broadcom/omx/Kbuild),)
+header-y += omx/
+endif
+ifneq ($(wildcard $(srctree)/include/linux/broadcom/vc03/Kbuild),)
+header-y += vc03/
+endif
+
+# Add all local header files
+header-y += $(notdir $(wildcard $(srctree)/include/linux/broadcom/*.h))

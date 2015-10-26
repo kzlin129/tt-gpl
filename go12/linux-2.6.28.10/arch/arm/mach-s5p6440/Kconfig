@@ -1,0 +1,123 @@
+# arch/arm/mach-s5p6440/Kconfig
+#
+# Copyright 2008 Openmoko, Inc.
+# Copyright 2008 Simtec Electronics
+#
+# Licensed under GPLv2
+
+# Configuration options for the S5P6440 CPU
+
+config CPU_S5P6440
+	bool
+	select CPU_S5P6440_INIT
+	select CPU_S5P6440_CLOCK
+	help
+	  Enable S5P6440 CPU support
+
+config S5P6440_SETUP_SDHCI
+	bool
+	help
+	  Internal helper functions for S5P6440 based SDHCI systems
+
+config MACH_SMDK6440
+	bool "SMDK6440"
+	select CPU_S5P6440
+	select S3C_DEV_HSMMC
+	select S3C_DEV_HSMMC1
+        select S3C_DEV_HSMMC2
+	select S3C_DEV_I2C1
+	select S5P6440_SETUP_SDHCI
+	select S5P64XX_SETUP_I2C1
+	select S3C_DMA_PL330
+	select S3C_ADC
+	help
+	  Machine support for the Samsung SMDK6440
+
+config MACH_CORDOBA
+	bool "Cordoba + Mendoza"
+	select CPU_S5P6440
+	select S3C_DEV_HSMMC
+	select S3C_DEV_HSMMC1
+        select S3C_DEV_HSMMC2
+	select S3C_DEV_I2C1
+	select S5P64XX_SETUP_I2C1
+	select S3C_DMA_PL330
+	select S3C_ADC
+	select GPIO_VGPIO
+	select GPIO_VGPIO_EARLY
+	select PLAT_MENDOZA
+	select TOMTOM_HAVE_SPI_BARRACUDA
+	help
+	  Machine support for the TomTom Cordoba CPU board on top of
+	  Mendoza carrier board.
+
+config MACH_HAVANA
+	bool "TomTom Havana"
+	select CPU_S5P6440
+	select S3C_DEV_HSMMC
+	select S3C_DEV_HSMMC1
+        select S3C_DEV_HSMMC2
+	select S3C_DEV_I2C1
+	select S5P64XX_SETUP_I2C1
+	select S3C_DMA_PL330
+	select S3C_ADC
+	select GPIO_VGPIO
+	select GPIO_VGPIO_EARLY
+	select PLAT_MENDOZA
+	select TOMTOM_HAVE_SERIAL_AR15XX
+	help
+	  Machine support for the TomTom Havana board.
+
+config MACH_CATANIA_S
+	bool "TomTom Catania (Samsung)"
+	select CPU_S5P6440
+	select S3C_DEV_HSMMC
+	select S3C_DEV_HSMMC1
+        select S3C_DEV_HSMMC2
+	select S3C_DEV_I2C1
+	select S5P64XX_SETUP_I2C1
+	select S3C_DMA_PL330
+	select S3C_ADC
+	select GPIO_VGPIO
+	select GPIO_VGPIO_EARLY
+	select PLAT_MENDOZA
+	select TOMTOM_HAVE_SERIAL_AR15XX
+	help
+	  Machine support for the TomTom Catania board. (Samsung version)
+	  
+# At least some of the SMDK6440s were shipped with the card detect
+# for the MMC/SD slots connected to the same input. This means that
+# either the boards need to be altered to have channel0 to an alternate
+# configuration or that only one slot can be used.
+
+menu "SMDK6440 MMC/SD slot setup"
+	depends on MACH_SMDK6440
+
+config SMDK6440_SD_CH0
+	bool "Use channel 0"
+	depends on MACH_SMDK6440
+	help
+          Select CON7 (channel 0) as the MMC/SD slot, as
+	  at least some SMDK6440 boards come with the
+	  resistors fitted so that the card detects for
+	  channels 0 and 1 are the same.
+       
+config SMDK6440_SD_CH1
+	bool "Use channel 1"
+	depends on MACH_SMDK6440
+	help
+          Select CON6 (channel 1) as the MMC/SD slot, as
+	  at least some SMDK6440 boards come with the
+	  resistors fitted so that the card detects for
+	  channels 0 and 1 are the same.
+
+config SMDK6440_SD_CH2
+	bool "Use channel 2"
+	depends on MACH_SMDK6440
+	help
+          Select CON6 (channel 1) as the MMC/SD slot, as
+	  at least some SMDK6410 boards come with the
+	  resistors fitted so that the card detects for
+	  channels 0 and 1 are the same.
+
+endmenu

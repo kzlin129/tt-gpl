@@ -1,0 +1,10 @@
+Package: fdt-partition-2.6.28
+Priority: required
+Version: IPK_VERSION
+Architecture: IPK_ARCH
+Maintainer: support.tomtom.com
+Section: base
+Source: IPK_SOURCE
+Depends:
+Provides: fdt-partition
+Description: Factory data partition for kernel 2.6.28 (board.dtb)

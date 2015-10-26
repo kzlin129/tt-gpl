@@ -1,0 +1,119 @@
+/dts-v1/;
+
+/ {
+	features {
+		family-name			= "TomTom GO";
+		project-name			= "IRVINE";
+		model-name			= "GO";
+		hardware-name			= "Havana";
+		device-serial			= "WB4258G00174";
+		device-type			= "HA";
+		device-class			= <0>;
+		fdt-recovery-key		= <
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		>;
+		fdt-signer-id			= "";
+		text-to-speech			= <1>;
+		handsfree			= <1>;
+		internal-mic			= <0>;
+		voice-recording			= <0>;
+		connect-ext-mic			= <0>;
+		sdcard				= <1>;
+		uart-id				= <2>;
+		has-bluetooth			= <1>;
+		tft = "LMS480";
+	};
+
+	options {
+		bluetooth {
+			bt-name 			= "TomTom GO";
+			bt-class 			= <0x000408>;
+			bt-speed 			= <921600>;
+			bt-dev 				= "ttySAC3";
+			bt-mac-address 			= "AA:BB:CC:DD:EE:FF";
+			bt-clock 			= <26000000>;
+
+		};
+
+		battery {
+			current_consumption		= "/sys/devices/platform/s3c-adc/battery/current_consumption";
+			Vmaxf = <3900000>;
+			Vminf = <3400000>;
+			VminADC				= <3300000>;
+			VminEXT				= <3300000>;
+			VmaxADC				= <4000000>;
+			VmaxEXT				= <4000000>;
+			IminADC				= <3300000>;
+			IminEXT				= <3400000>;
+			ImaxADC				= <4100000>;
+			ImaxEXT				= <4200000>;
+			battery-low-warning		= <10>;
+			battery-low-suspend		= <5>;
+			battery-min-resume		= <7>;
+			battery-sw-off-gprs		= <12>;
+			backlight-suspend-level	= <20>;
+		};
+
+		dock {
+			uart-id				= <32>;
+		};
+
+		file-storage {
+			usb-name			= "TomTom GO 950";
+			luns				= <2>;
+		};
+
+		gprs {
+			type				= "FARO";
+			dev				= "ttySAC0";			
+		};
+
+		gps {
+			type 				= "GOGPS_AR1511";
+			ephemeris			= <1>;
+			dev				= "ttySAC1";		
+		};
+
+		usbmode {
+			/* usbmode related , the id of the usbmode driver needs change */
+			bus-id				= <1>; 
+		};
+
+		backlight {
+			brightness-levels {
+				mass-storage		= <30>;
+				system-update		= <30>;
+				navcore				= <65>;
+				night-mode			= <30>;
+				screen-calibration	= <65>;
+			};
+		};
+
+		sdcard {
+			blockdev = "mmcblk1";
+			sd-device = "/dev/mmcblk1";
+			sys-filter = "/block/mmcblk1";
+			sd-name = "mmc1";
+			block-stat = "/sys/block/mmcblk1/stat";
+		};
+
+		movi { 
+			blockdev = "mmcblk0";
+			movi-device = "/dev/mmcblk0";
+			sys-filter = "mmc0";
+			block-stat = "/sys/block/mmcblk0/stat";
+		};
+
+	};
+
+	/* list of tomtom methods that need implementing: adding items as devices
+	will cause tt_setup to register the services */
+	devices {
+		tomtom-gprs {};
+		tomtom-gps-atheros {};
+		tomtom-bl-pwm {};
+	};
+};

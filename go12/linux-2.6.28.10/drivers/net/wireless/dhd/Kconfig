@@ -1,0 +1,9 @@
+config DHD
+	tristate "Broadcom BCM4325 wireless chipset support"
+	depends on WLAN_80211 && EXPERIMENTAL
+	---help---
+	  This module adds support for wireless adapter based on
+	  Broadcom BCM4325 chipset
+
+	  If you choose to build a module, it'll be called dhd. Say M if
+	  unsure.

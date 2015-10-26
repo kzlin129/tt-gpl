@@ -1,0 +1,12 @@
+Package: linux-kernel-2.6.28-oprofile
+Priority: required
+Version: IPK_VERSION
+Architecture: IPK_ARCH
+Maintainer: support.tomtom.com
+Section: base
+Source: IPK_SOURCE
+Depends:
+Provides: linux-kernel, linux-kernel-oprofile
+Description: Linux kernel 2.6.28 with oprofile support.
+License: GPLv2
+Action: UA

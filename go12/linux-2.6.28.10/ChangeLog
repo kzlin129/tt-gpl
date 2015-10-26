@@ -1,0 +1,2596 @@
+previous samsung-ap-2.6 repository ChangeLog_s3c64xx for s3c64xx branch
+-----------------------------------------------------------------------
+rel-0-0-0 : Kwanghyun La  (Nov.10.2008)
+	It's not fixed version , just only initial copy version for
+	        estimation.
+
+dev-0-0-1 : Ilho Lee
+dev-0-0-2 : Ilho Lee
+	Touchscreen D/D added, but Ethernet D/D is being adding.
+
+dev-0-0-3 : Jongpill Lee
+	Support ADC driver and merge adc-s3c64xx.c and adc-s3c24xx.c file
+
+	Removed Files:
+		R A arch/arm/plat-s3c64xx/adc-s3c64xx.c
+
+	Added Files:
+		A arch/arm/plat-s3c/adc.c
+
+	Modified Files:
+		M arch/arm/mach-s3c6410/mach-smdk6410.c
+		M arch/arm/plat-s3c/Kconfig
+		M arch/arm/plat-s3c/Makefile
+		M arch/arm/plat-s3c/include/plat/adc.h
+		M drivers/char/Kconfig
+
+dev-0-0-4 : Jongpill Lee
+	Bug fixed on ADC driver
+
+	Modified Files:
+		M arch/arm/plat-s3c/adc.c
+	
+dev-0-0-5 : Ilho Lee
+	SMC9115 ethernet D/D is working(small_root only)
+
+dev-0-0-6: Jinsung Yang
+	- NAND driver support
+
+	Added files:
+		A arch/arm/configs/smdk6410mtd_defconfig
+		A arch/arm/plat-s3c/include/plat/partition.h
+		A drivers/mtd/nand/s3c_nand.c
+
+	Modified files:
+		M arch/arm/mach-s3c6400/include/mach/map.h
+		M arch/arm/mach-s3c6410/mach-smdk6410.c
+		M arch/arm/plat-s3c/Kconfig
+		M arch/arm/plat-s3c/include/plat/nand.h
+		M arch/arm/plat-s3c/include/plat/regs-nand.h
+		M arch/arm/plat-s3c64xx/devs.c
+		M drivers/mtd/nand/Kconfig
+		M drivers/mtd/nand/Makefile
+
+dev-0-0-7: Sungjun Bae 
+	 - I2S WM8580, I2SWM8990 Complete. 
+	 
+	Modified Files:
+	 	M arch/arm/configs/smdk6410mtd_defconfig arch/arm/configs/smdk6410nfs_defconfig
+		M arch/arm/plat-s3c64xx/include/plat/gpio-bank-d.h
+		M arch/arm/plat-s3c64xx/include/plat/regs-clock.h include/sound/soc.h
+		M sound/soc/soc-core.c sound/soc/codecs/wm8580.c sound/soc/codecs/wm8990.c
+
+dev-0-0-8: Sungjun Bae 
+	- DMA File Structure was changed.
+
+	Modified Files:
+		M arch/arm/plat-s3c/Makefile
+	        M arch/arm/plat-s3c/include/mach/s3c-dma.h
+	        M arch/arm/plat-s3c64xx/Makefile
+	Added Files:
+	        A arch/arm/plat-s3c/dma-pl080.c
+	Removed Files:
+	        R arch/arm/plat-s3c64xx/dma-pl080.c
+
+dev-0-0-9: Ilho Lee
+	- PL330 DMA D/D file added
+
+	Modified Files:
+		M arch/arm/plat-s3c/Makefile
+		M arch/arm/plat-s3c/Kconfig
+
+	Added Files:
+	        A arch/arm/plat-s3c/dma-pl330.c
+	        A arch/arm/plat-s3c/dma-pl330-microcode.c
+
+
+dev-0-0-10: eyryu 
+	- Add SMDKC100 initial.
+
+dev-0-0-11: Ilho Lee
+	- DMA definition files changed
+
+	Modified Files:
+		M arch/arm/mach-s3c6410/dma.c
+		M arch/arm/mach-s5pc100/dma.c
+
+dev-0-0-12: Jinsung Yang
+	- gpiolib support for s5pc1xx architecture
+
+	Modified files:
+		M arch/arm/plat-s5pc1xx/include/plat/regs-gpio.h
+		M arch/arm/mach-s5pc100/include/mach/gpio.h
+		M arch/arm/plat-s3c/gpio-config.c
+		M arch/arm/plat-s3c/include/plat/gpio-cfg-helpers.h
+
+	Added files:
+		A arch/arm/plat-s5pc1xx/gpiolib.c
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-a0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-a1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-b.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-c.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-d.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-e0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-e1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-f0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-f1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-f2.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-f3.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-g0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-g1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-g2.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-g3.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-h0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-h1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-h2.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-h3.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-i.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-j0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-j1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-j2.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-j3.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-j4.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-k0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-k1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-k2.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-k3.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-mp00.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-mp01.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-mp02.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-mp03.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-mp04.h
+
+dev-0-0-13: eyryu 
+	- Add SMDKC100 clock & serial 
+
+dev-0-0-14: Ilho Lee
+	- ADC D/D added
+
+	Added Files:
+		A arch/arm/plat-s3c24xx/adc.c
+		A arch/arm/plat-s3c64xx/adc.c
+
+dev-0-0-15: eyryu 
+	- Support SMDKC100 UART driver
+	- Add SMDKC100 clock & serial 
+
+rel-1-0-0: Kyoungil Kim
+	- Official Release (08.11.27)
+
+dev-1-0-0: Kyoungil Kim
+
+dev-1-0-1: Ilho Lee
+	- CPU idle added
+
+	Added Files:
+		A arch/arm/mach-s3c6400/idle.h
+		A arch/arm/mach-s5pc100/idle.h
+
+	Modified Files:
+		M arch/arm/mach-s3c6410/cpu.c
+		M arch/arm/mach-s5pc100/cpu.c
+
+dev-1-0-2: Ilho Lee
+	- S3C24XX -> S3C changed in the S3C DMA D/D.
+
+	Modified Files:
+		M arch/arm/mach-s3c6410/dma.c
+		M arch/arm/mach-s5pc100/dma.c
+		M arch/arm/plat-s3c/dma-pl080.c
+		M arch/arm/plat-s3c/dma-pl330.c
+		M arch/arm/plat-s3c/include/plat/s3c-dma.h
+
+dev-1-0-3: Ilho Lee
+	- PL330 DMA D/D is adding..
+
+	Modified Files:
+		M arch/arm/plat-s3c/dma-pl330.c
+		M arch/arm/plat-s3c/dma-pl330-mcode.h
+		M arch/arm/plat-s3c/include/mach/s3c-dma.h
+
+dev-1-0-4: Byungjae Lee
+	- Support File Storage Gadget for SMDK6410 HS USB OTG 
+
+	Modified Files:
+		M arch/arm/mach-s3c6400/include/mach/map.h
+		M arch/arm/mach-s3c6410/cpu.c
+		M arch/arm/mach-s3c6410/mach-smdk6410.c
+		M arch/arm/plat-s3c64xx/devs.c
+		M arch/arm/plat-s3c64xx/include/plat/regs-clock.h
+		M drivers/usb/gadget/Kconfig
+		M drivers/usb/gadget/Makefile
+		M drivers/usb/gadget/epautoconf.c
+		M drivers/usb/gadget/gadget_chips.h
+
+	Added Files:
+		A arch/arm/plat-s3c/include/plat/regs-otg.h
+		A drivers/usb/gadget/s3c_udc.h
+		A drivers/usb/gadget/s3c_udc_otg.c
+
+dev-1-0-5: Ilho Lee
+	- S3C touchscreen D/D changed.
+
+	Modified Files:
+		M drivers/input/touchscreen/s3c-ts.c
+
+dev-1-0-6: Jinsung Yang
+	- Clock system support for S5PC100
+
+	Modified files:
+		M arch/arm/plat-s3c/clock.c
+		M arch/arm/plat-s3c/include/plat/clock.h
+		M arch/arm/plat-s5pc1xx/clock.c
+		M arch/arm/plat-s5pc1xx/s5pc100-clock.c
+		M arch/arm/plat-s5pc1xx/include/plat/pll.h
+		M arch/arm/plat-s5pc1xx/include/plat/regs-clock.h
+
+dev-1-0-7: Jinsung Yang
+	- LCD (LTE480WV) support for SMDKC100
+
+	Modified files:
+		drivers/video/samsung/s5pfb_fimd5x.c
+
+dev-1-0-8: Byungjae Lee
+	- Masked HCLK for USB OTG at register clocks 
+
+	Modified files:
+		M arch/arm/plat-s3c64xx/clock.c
+		M drivers/usb/gadget/s3c_udc_otg.c
+
+dev-1-0-9: Ilho Lee
+	- Ext-interrupts handlers added.
+
+	Added Files:
+		A arch/arm/plat-s5pc1xx/irq-eint.c
+
+dev-1-0-10: Ilho Lee
+	- SMC9115 ethernet(100Mbps) D/D ported.
+
+	Added Files:
+		A arch/arm/plat-s5pc1xx/irq-eint.c
+
+dev-1-0-11: Ilho Lee
+	- dev-adc.c deleted.
+
+	Deleted Files:
+		D arch/arm/plat-s3c/dev-adc.c
+
+rel-1-0-1: Kyoungil Kim
+	- Git Release (08.12.09)
+
+v2.6.28-rc7-s3c64xx-r0d0: Kyoungil Kim
+	- s3c64xx rc7 initial git tag
+
+v2.6.28-rc8-s3c64xx: Kyoungil Kim
+	- s3c64xx rc8 patch
+
+v2.6.28-rc8-s3c64xx-r0d0: Kyoungil Kim
+
+v2.6.28-rc8-s3c64xx-r0d1: Jinsung Yang
+	- Fix for wrong comments
+
+v2.6.28-rc8-s3c64xx-r0d2: Jongpill Lee
+
+	- bug fixed about OS Timer
+
+	Modified Files:
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       arch/arm/plat-s3c/include/plat/cpu.h
+		M       arch/arm/plat-s3c/include/plat/regs-timer.h
+		M       arch/arm/plat-s3c/time.c
+		M       arch/arm/plat-s3c24xx/include/plat/cpu.h
+
+v2.6.28-rc8-s3c64xx-r0d3: Jongpill Lee
+	- Remove adc driver on s3c24xx
+	Modified Files:
+		M       arch/arm/plat-s3c24xx/Kconfig
+		M       arch/arm/plat-s3c24xx/Makefile
+	Deleted Files:
+		D       arch/arm/plat-s3c24xx/adc.c
+
+v2.6.28-rc8-s3c64xx-r0d4: Jinsung Yang
+	- 24 bit logo display support
+	- s3c framebuffer driver naming rule changes
+
+	Modified files:
+		M       drivers/video/cfbimgblt.c
+		M       drivers/video/samsung/s3cfb.c
+		M       drivers/video/samsung/s3cfb.h
+		M       drivers/video/samsung/s3cfb_fimd4x.c
+		M       drivers/video/samsung/s3cfb_fimd5x.c
+		M       drivers/video/samsung/s3cfb_lte480wv.c
+		M       drivers/video/samsung/s3cfb_lts222qv.c
+		M       drivers/video/samsung/s3cfb_ltv350qv.c
+		M       drivers/video/samsung/s3cfb_spi.c
+
+v2.6.28-rc8-s3c64xx-r0d5: Jongpill Lee
+	-Support cpu freq on smdk6410
+
+	Added Files:
+		A 	arch/arm/plat-s3c64xx/s3c64xx-cpufreq.carch/arm/plat-s3c64xx/s3c64xx-cpufreq.c
+	Modified Files:
+		M	arch/arm/Kconfig
+		M	arch/arm/plat-s3c/clock.c
+		M	arch/arm/plat-s3c64xx/Makefile
+
+v2.6.28-rc8-s3c64xx-r0d6: Kyoungil Kim
+	- split plat-s5p64xx, mach-s5p6440
+	- Support for s5p6440 serial
+
+	Added Files
+		A       arch/arm/configs/smdk6440ramdisk_defconfig
+		A       arch/arm/mach-s5p6440/Kconfig
+		A       arch/arm/mach-s5p6440/Makefile.boot
+		A       arch/arm/mach-s5p6440/cpu.c
+		A       arch/arm/mach-s5p6440/dma.c
+		A       arch/arm/mach-s5p6440/include/mach/debug-macro.S
+		A       arch/arm/mach-s5p6440/include/mach/dma.h
+		A       arch/arm/mach-s5p6440/include/mach/entry-macro.S
+		A       arch/arm/mach-s5p6440/include/mach/gpio-core.h
+		A       arch/arm/mach-s5p6440/include/mach/gpio.h
+		A       arch/arm/mach-s5p6440/include/mach/hardware.h
+		A       arch/arm/mach-s5p6440/include/mach/idle.h
+		A       arch/arm/mach-s5p6440/include/mach/irqs.h
+		A       arch/arm/mach-s5p6440/include/mach/map.h
+		A       arch/arm/mach-s5p6440/include/mach/memory.h
+		A       arch/arm/mach-s5p6440/include/mach/regs-irq.h
+		A       arch/arm/mach-s5p6440/include/mach/regs-mem.h
+		A       arch/arm/mach-s5p6440/include/mach/system.h
+		A       arch/arm/mach-s5p6440/include/mach/tick.h
+		A       arch/arm/mach-s5p6440/include/mach/uncompress.h
+		A       arch/arm/mach-s5p6440/mach-smdk6440.c
+		A       arch/arm/mach-s5p6440/setup-sdhci.c
+		A       arch/arm/plat-s5p64xx/Kconfig
+		A       arch/arm/plat-s5p64xx/Makefile
+		A       arch/arm/plat-s5p64xx/adc.c
+		A       arch/arm/plat-s5p64xx/clock.c
+		A       arch/arm/plat-s5p64xx/cpu.c
+		A       arch/arm/plat-s5p64xx/dev-uart.c
+		A       arch/arm/plat-s5p64xx/devs.c
+		A       arch/arm/plat-s5p64xx/gpiolib.c
+		A       arch/arm/plat-s5p64xx/include/plat/dma.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-a.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-b.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-c.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-f.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-g.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-h.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-i.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-j.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-n.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-p.h
+		A       arch/arm/plat-s5p64xx/include/plat/gpio-bank-r.h
+		A       arch/arm/plat-s5p64xx/include/plat/irqs.h
+		A       arch/arm/plat-s5p64xx/include/plat/pll.h
+		A       arch/arm/plat-s5p64xx/include/plat/regs-clock.h
+		A       arch/arm/plat-s5p64xx/include/plat/regs-gpio.h
+		A       arch/arm/plat-s5p64xx/include/plat/regs-sys.h
+		A       arch/arm/plat-s5p64xx/include/plat/s5p6440.h
+		A       arch/arm/plat-s5p64xx/irq-eint.c
+		A       arch/arm/plat-s5p64xx/irq.c
+		A       arch/arm/plat-s5p64xx/s5p6440-clock.c
+		A       arch/arm/plat-s5p64xx/s5p6440-init.c
+		A       arch/arm/plat-s5p64xx/setup-i2c0.c
+		A       arch/arm/plat-s5p64xx/setup-i2c1.c
+	Modified Files
+		M       arch/arm/Kconfig
+		M       arch/arm/Makefile
+		M       arch/arm/mach-s5p6440/Makefile
+		M       arch/arm/mm/Kconfig
+		M       arch/arm/plat-s3c/Kconfig
+		M       arch/arm/plat-s3c/include/plat/clock.h
+		M       arch/arm/plat-s3c/include/plat/cpu.h
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       arch/arm/plat-s3c/include/plat/regs-lcd.h
+		M       arch/arm/tools/mach-types
+		M       drivers/i2c/busses/Kconfig
+		M       drivers/input/touchscreen/Kconfig
+		M       drivers/mtd/nand/Kconfig
+		M       drivers/serial/Kconfig
+		M       drivers/video/Kconfig
+		M       drivers/video/samsung/Makefile
+		M       drivers/video/samsung/s3cfb.h
+		M       drivers/video/samsung/s3cfb_spi.c
+
+v2.6.28-rc8-s3c64xx-r0d7: Ilho Lee
+	- ASYN/SYN mode select added.
+
+	Modified Files:
+		M       arch/arm/plat-s3c64xx/include/plat/regs-clock.h
+		M       arch/arm/plat-s3c64xx/s3c6400-clock.c
+
+v2.6.28-rc8-s3c64xx-r0d8: Kyoungil Kim
+	- Support for FPGA6440 lcd
+
+	Modified Files:
+		M       arch/arm/mach-s5p6440/include/mach/gpio.h
+		M       drivers/video/samsung/s3cfb_fimd5x.c
+		M       drivers/video/samsung/s3cfb_lts222qv.c
+		M       drivers/video/samsung/s3cfb_spi.c
+
+v2.6.28-rc8-s3c64xx-r0d9: Jongpill Lee
+	- Support APM on SMDK6410
+
+	Modified Files:
+		M	arch/arm/configs/smdk6410mtd_defconfig
+		M	arch/arm/mach-s3c6400/include/mach/regs-irq.h
+		M	arch/arm/mach-s3c6410/Makefile
+		M	arch/arm/mach-s3c6410/mach-smdk6410.c
+		M	arch/arm/plat-s3c/Makefile
+		M	arch/arm/plat-s3c/include/plat/regs-serial.h
+		M	arch/arm/plat-s3c64xx/Makefile
+		M	arch/arm/plat-s3c64xx/include/plat/gpio-bank-k.h
+		M	arch/arm/plat-s3c64xx/include/plat/gpio-bank-l.h
+		M	arch/arm/plat-s3c64xx/include/plat/regs-gpio.h
+		M	arch/arm/plat-s3c64xx/irq.c
+		M	drivers/video/samsung/s3cfb_fimd4x.c
+	Added Files:
+		A	arch/arm/mach-s3c6410/irq.c
+		A	arch/arm/mach-s3c6410/pm.c
+		A	arch/arm/plat-s3c64xx/include/plat/gpio-bank-m.h
+		A	arch/arm/plat-s3c64xx/include/plat/pm.h
+		A	arch/arm/plat-s3c64xx/pm.c
+		A	arch/arm/plat-s3c64xx/sleep.S
+
+v2.6.28-rc8-s3c64xx-r0d10: Jongpill Lee
+	- Support RTC on SMDK6410
+
+	MOdified Files:
+		M       arch/arm/mach-s3c2410/include/mach/map.h
+		M       arch/arm/mach-s3c6400/include/mach/map.h
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       arch/arm/plat-s3c/include/plat/regs-rtc.h
+		M       arch/arm/plat-s3c64xx/devs.c
+		M       arch/arm/plat-s3c64xx/include/plat/pm.h
+		M       drivers/rtc/Kconfig
+		M       drivers/rtc/rtc-s3c.c
+
+v2.6.28-rc8-s3c64xx-r0d11: Kyoungil Kim
+	- Keypad Driver for SMDK6410
+
+	Modified Files:
+		M       arch/arm/configs/smdk6410mtd_defconfig
+		M       arch/arm/configs/smdk6410nfs_defconfig
+		M       arch/arm/configs/smdk6410ramdisk_defconfig
+		M       arch/arm/mach-s3c6400/include/mach/map.h
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       arch/arm/plat-s3c/gpio-config.c
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       arch/arm/plat-s3c64xx/clock.c
+		M       arch/arm/plat-s3c64xx/devs.c
+		M       arch/arm/plat-s3c64xx/include/plat/gpio-bank-k.h
+		M       arch/arm/plat-s3c64xx/include/plat/gpio-bank-l.h
+		M       drivers/input/keyboard/Kconfig
+		M       drivers/input/keyboard/Makefile
+		M       drivers/input/touchscreen/s3c-ts.c
+	Added Files:
+		A       arch/arm/plat-s3c64xx/include/plat/regs-keypad.h
+		A       drivers/input/keyboard/s3c-keypad.c
+		A       drivers/input/keyboard/s3c-keypad.h
+	
+v2.6.28-rc8-s3c64xx-r0d12: Jongpill Lee
+	- Support HS-SPI on SMDK6410
+
+	Added Files:
+		A       arch/arm/plat-s3c64xx/include/plat/regs-spi.h
+		A       drivers/spi/hspi-s3c64xx.c
+		A       drivers/spi/hspi-s3c64xx.h
+		A       drivers/spi/spi-dev.c
+		A       drivers/spi/spi-dev.h
+	
+	Modified Files:
+		M       arch/arm/mach-s3c6400/include/mach/map.h
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       drivers/rtc/rtc-s3c.c
+		M       drivers/spi/Kconfig
+		M       drivers/spi/Makefile
+
+v2.6.28-rc8-s3c64xx-r0d13: Ilho Lee
+	- Support HS-MMC on SMDK6410
+
+v2.6.28-rc8-s3c64xx-r0d14: Jongpill Lee
+	- bug fiex on PM Driver
+
+	Modified Files:
+		M       arch/arm/configs/smdk6410mtd_defconfig
+		M       arch/arm/plat-s3c64xx/sleep.S
+
+v2.6.28-rc8-s3c64xx-r0d15: Kyoungil Kim
+	- Support USB host on SMDK6410
+
+	Modifiled Files:
+		M       arch/arm/configs/smdk6410mtd_defconfig
+		M       arch/arm/configs/smdk6410nfs_defconfig
+		M       arch/arm/configs/smdk6410onenand_defconfig
+		M       arch/arm/configs/smdk6410ramdisk_defconfig
+		M       arch/arm/mach-s3c6400/include/mach/map.h
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       arch/arm/mach-s5p6440/mach-smdk6440.c
+		M       arch/arm/plat-s3c/include/plat/partition.h
+		M       arch/arm/plat-s3c64xx/devs.c
+		M       drivers/usb/Kconfig
+		M       drivers/usb/gadget/s3c_udc_otg.c
+		M       drivers/usb/host/ohci-hcd.c
+		M       drivers/usb/host/ohci-s3c2410.c
+	Added Files:
+		A       arch/arm/mach-s3c6400/include/mach/usb-control.h
+
+v2.6.28-rc8-s3c64xx-r0d16: Jongpill Lee
+	- Support DVS on CPUFREQ Driver
+
+	Added Files:
+		A       arch/arm/plat-s3c64xx/ltc3714.c
+	Modified Files:
+		M       arch/arm/plat-s3c/clock.c
+		M       arch/arm/plat-s3c64xx/Makefile
+		M       arch/arm/plat-s3c64xx/s3c64xx-cpufreq.c
+		
+v2.6.28-rc8-s3c64xx-r0d17: Byungjae Lee
+	- Support Ethernet gadget and RNDIS for SMDK6410
+
+	Modifiled Files:
+		M	arch/arm/configs/smdk6410mtd_defconfig
+		M	arch/arm/mach-s3c6410/mach-smdk6410.c
+		M	drivers/usb/gadget/Kconfig
+		M	drivers/usb/gadget/epautoconf.c
+		M	drivers/usb/gadget/f_rndis.c
+		M	drivers/usb/gadget/s3c_udc.h
+		M	drivers/usb/gadget/s3c_udc_otg.c
+		M	drivers/usb/gadget/u_ether.c
+	Added Files:
+		A	drivers/usb/gadget/s3c_udc_otg_xfer_dma.c
+		A	drivers/usb/gadget/s3c_udc_otg_xfer_slave.c
+
+v2.6.28-rc8-s3c64xx-r0d18: Jongpill Lee
+	- Remove warning message
+
+	Modified Files:
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       arch/arm/mach-s3c6410/pm.c
+		M       arch/arm/plat-s3c/clock.c
+		M       arch/arm/plat-s3c64xx/clock.c
+		M       arch/arm/plat-s3c64xx/include/plat/pm.h
+		M       arch/arm/plat-s3c64xx/irq.c
+		M       arch/arm/plat-s3c64xx/ltc3714.c
+		M       arch/arm/plat-s3c64xx/pm.c
+		M       arch/arm/plat-s3c64xx/s3c64xx-cpufreq.c
+		M       drivers/rtc/rtc-s3c.c
+		M       drivers/spi/hspi-s3c64xx.c
+
+v2.6.28-rc8-s3c64xx-r0d19: Kyoungil Kim
+	- Support Watchdog on SMDK6410
+
+	Modified Files:
+		M       arch/arm/configs/smdk6410mtd_defconfig
+		M       arch/arm/configs/smdk6410nfs_defconfig
+		M       arch/arm/configs/smdk6410onenand_defconfig
+		M       arch/arm/configs/smdk6410ramdisk_defconfig
+		M       arch/arm/mach-s3c6400/include/mach/map.h
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       arch/arm/plat-s3c64xx/devs.c
+		M       drivers/watchdog/Kconfig
+
+v2.6.28-rc8-s3c64xx-r0d20: Ryu Euiyoul
+	- Support S5M8751 on SMDK6410
+
+	Modified Files:
+		M       sound/soc/codecs/Kconfig
+		M       sound/soc/codecs/Makefile
+		M       sound/soc/s3c64xx/Kconfig
+		M       sound/soc/s3c64xx/Makefile
+
+	Added Files:
+		A       sound/soc/codecs/s5m8751.c
+		A       sound/soc/codecs/s5m8751.h
+		A       sound/soc/s3c64xx/smdk6410_s5m8751.c
+		A       arch/arm/configs/smdk6410rf_defconfig
+
+v2.6.28-rc8-s3c64xx-r0d21: SungJun Bae
+	- Support wm8580 on VEGA-L FPGA (Draft)
+
+	Modified Files:
+		M	arch/arm/configs/smdk6440ramdisk_defconfig
+		M	arch/arm/mach-s5p6440/dma.c
+		M	arch/arm/mach-s5p6440/mach-smdk6440.c
+		M	arch/arm/plat-s3c/dma-pl080.c
+		M	sound/soc/s3c64xx/Kconfig
+		M	sound/soc/s3c64xx/Makefile
+		M	sound/soc/s3c64xx/s3c-i2s.h
+		M	sound/soc/s3c64xx/s3c-pcm.c
+		M	sound/soc/s3c64xx/s3c6410-i2s-v40.c
+
+	Added Files:
+		A	sound/soc/s3c64xx/s5p6440-i2s-v40.c
+		A	sound/soc/s3c64xx/smdk6440_wm8580.c
+
+v2.6.28.6-s3c64xx: Kyoungil Kim
+
+v2.6.28.6-s3c64xx-r0d0: Kyoungil Kim
+
+v2.6.28.6-s3c64xx-r0d1: SungJun	Bae 
+	- Support Post Processor on SMDK6410
+
+	Modified Files:
+		M	ChangeLog_s3c64xx
+		M	arch/arm/mach-s3c6400/include/mach/map.h
+		M	arch/arm/mach-s3c6410/mach-smdk6410.c
+		M	arch/arm/plat-s3c/include/plat/devs.h
+		M	arch/arm/plat-s3c/include/plat/regs-lcd.h
+		M	arch/arm/plat-s3c64xx/devs.c
+		M	drivers/media/video/Kconfig
+		M	drivers/media/video/Makefile
+
+	Added Files:
+		A	arch/arm/plat-s3c/include/plat/regs-pp.h
+		A	arch/arm/plat-s3c/include/plat/reserved_mem.h
+		A	drivers/media/video/samsung/post/Kconfig
+		A	drivers/media/video/samsung/post/Makefile
+		A	drivers/media/video/samsung/post/s3c_pp.h
+		A	drivers/media/video/samsung/post/s3c_pp_6400.c
+		A	drivers/media/video/samsung/post/s3c_pp_common.c
+		A	drivers/media/video/samsung/post/s3c_pp_common.h
+		
+v2.6.28.6-s3c64xx-r0d2: SungJun	Bae 
+	- Support TV encoder,scaler on SMDK6410
+
+	Modified Files:
+		M       arch/arm/mach-s3c6400/include/mach/map.h
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       arch/arm/plat-s3c64xx/devs.c
+		M       drivers/media/video/Kconfig
+		M       drivers/media/video/Makefile
+		M       drivers/media/video/samsung/Kconfig
+		M       drivers/media/video/samsung/post/s3c_pp_6400.c
+		M       drivers/media/video/v4l2-dev.c
+		M       include/media/v4l2-dev.h
+
+	Added Files:
+		A       arch/arm/plat-s3c/include/plat/regs-tvenc.h
+		A       arch/arm/plat-s3c/include/plat/regs-tvscaler.h
+		A       drivers/media/video/samsung/tv/Kconfig
+		A       drivers/media/video/samsung/tv/Makefile
+		A       drivers/media/video/samsung/tv/s3c-tvenc.c
+		A       drivers/media/video/samsung/tv/s3c-tvenc.h
+		A       drivers/media/video/samsung/tv/s3c-tvscaler.c
+		A       drivers/media/video/samsung/tv/s3c-tvscaler.h
+v2.6.28.6-s3c64xx-r0d3: Jaeryul Oh
+	- Support JPEG, roator on SMDK6410
+
+	Modified Files :
+		M       arch/arm/mach-s3c6400/include/mach/map.h
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       arch/arm/plat-s3c64xx/devs.c
+		M       drivers/media/video/samsung/Kconfig
+		M       drivers/media/video/samsung/Makefile
+
+	Added Files:
+		A       drivers/media/video/samsung/jpeg/Kconfig
+		A       drivers/media/video/samsung/jpeg/Makefile
+		A       drivers/media/video/samsung/jpeg/jpg_conf.h
+		A       drivers/media/video/samsung/jpeg/jpg_mem.c
+		A       drivers/media/video/samsung/jpeg/jpg_mem.h
+		A       drivers/media/video/samsung/jpeg/jpg_misc.c
+		A       drivers/media/video/samsung/jpeg/jpg_misc.h
+		A       drivers/media/video/samsung/jpeg/jpg_opr.c
+		A       drivers/media/video/samsung/jpeg/jpg_opr.h
+		A       drivers/media/video/samsung/jpeg/log_msg.c
+		A       drivers/media/video/samsung/jpeg/log_msg.h
+		A       drivers/media/video/samsung/jpeg/s3c-jpeg.c
+		A       drivers/media/video/samsung/jpeg/s3c-jpeg.h
+		A       drivers/media/video/samsung/rotator/Kconfig
+		A       drivers/media/video/samsung/rotator/Makefile
+		A       drivers/media/video/samsung/rotator/regs-rotator.h
+		A       drivers/media/video/samsung/rotator/s3c_rotator.c
+		A 	drivers/media/video/samsung/rotator/s3c_rotator_common.h
+
+v2.6.28.6-s3c64xx-r0d4: Jinsung Yang
+	- FIMC support for SMDK6410
+	- Including reserved memory feature with bootmem
+	- All functions have been finished on the planning
+
+v2.6.28.6-s3c64xx-r0d5: SungJun Bae 
+	- bootmem applied to post and tv.
+		M	drivers/media/video/samsung/post/s3c_pp_6400.c
+		M	drivers/media/video/samsung/tv/s3c-tvscaler.h
+
+v2.6.28.6-s3c64xx-r0d6: PyoungJae Jung, Jiun Yu
+	- MFC support for SMDK6410
+	- It support bootmem for large buffer memory
+	- Changed coding style to linux kernel coding style
+	- Bug fixed in Hybrid DiVX encoding problem
+
+	Modified Files:
+		M	arch/arm/mach-s3c6400/include/mach/map.h
+		M	arch/arm/mach-s3c6410/mach-smdk6410.c
+		M	arch/arm/plat-s3c/include/plat/devs.h
+		M	arch/arm/plat-s3c64xx/devs.c
+		M	arch/arm/plat-s3c64xx/include/plat/media.h
+		M	drivers/media/video/samsung/Kconfig
+		M	drivers/media/video/samsung/Makefile
+
+	Added Files:
+		A	arch/arm/plat-s3c64xx/include/plat/regs-mfc.h
+		A	drivers/media/video/samsung/mfc/Kconfig
+		A	drivers/media/video/samsung/mfc/Makefile
+		A	drivers/media/video/samsung/mfc/prism_s.h
+		A	drivers/media/video/samsung/mfc/prism_s_v137.c
+		A	drivers/media/video/samsung/mfc/s3c_mfc.c
+		A	drivers/media/video/samsung/mfc/s3c_mfc.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_base.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_bitproc_buf.c
+		A	drivers/media/video/samsung/mfc/s3c_mfc_bitproc_buf.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_config.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_databuf.c
+		A	drivers/media/video/samsung/mfc/s3c_mfc_databuf.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_hw_init.c
+		A	drivers/media/video/samsung/mfc/s3c_mfc_hw_init.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_inst_pool.c
+		A	drivers/media/video/samsung/mfc/s3c_mfc_inst_pool.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_instance.c
+		A	drivers/media/video/samsung/mfc/s3c_mfc_instance.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_intr_noti.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_params.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_set_config.c
+		A	drivers/media/video/samsung/mfc/s3c_mfc_sfr.c
+		A	drivers/media/video/samsung/mfc/s3c_mfc_sfr.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_types.h
+		A	drivers/media/video/samsung/mfc/s3c_mfc_yuv_buf_manager.c
+		A	drivers/media/video/samsung/mfc/s3c_mfc_yuv_buf_manager.h
+
+v2.6.28.6-s3c64xx-r0d7: Kyoungil Kim
+	- Just Prevent tag for SMDK6410
+
+v2.6.28.6-s3c64xx-r0d8: Jaeryul Oh
+	- Fixed Bug in case of dynamic fps change of MPEG4 encoding 
+
+	Modified Files:
+		M	drivers/media/video/samsung/mfc/s3c_mfc_instance.h
+		M	drivers/media/video/samsung/mfc/s3c_mfc_instance.c
+
+v2.6.28.6-s3c64xx-r0d9: Jonghun Han
+        - S3C6410 FIMG-2D driver support
+
+		Added Files:
+			drivers/media/video/samsung/g2d/Kconfig
+			drivers/media/video/samsung/g2d/Makefile
+			drivers/media/video/samsung/g2d/s3c_fimg2d2x.c
+			drivers/media/video/samsung/g2d/s3c_fimg2d2x.h
+			arch/arm/plat-s3c/include/plat/regs-g2d.h
+
+		Modified Files:
+			arch/arm/configs/smdk6410mtd_defconfig
+			arch/arm/configs/smdk6410nfs_defconfig
+			arch/arm/configs/smdk6410onenand_defconfig
+			arch/arm/configs/smdk6410ramdisk_defconfig
+			arch/arm/mach-s3c6400/include/mach/map.h
+			arch/arm/mach-s3c6410/mach-smdk6410.c
+			arch/arm/plat-s3c/include/plat/devs.h
+			arch/arm/plat-s3c64xx/devs.c
+			drivers/media/video/samsung/Kconfig
+			drivers/media/video/samsung/Makefile
+			drivers/video/samsung/s3cfb.c
+			drivers/video/samsung/s3cfb_fimd4x.c
+
+v2.6.28.6-s3c64xx-r1: Jonghun Han
+	- Official Release (09.03.06)
+
+v2.6.28.6-s3c64xx-r1d0: Kyoungil Kim
+
+v2.6.28.6-s3c64xx-r1d1 : Byungjae Lee
+	- implemented s3c6410 OTG host role for Mass storage only
+
+	Modified Files:
+		M	arch/arm/mach-s3c6410/mach-smdk6410.c
+		M	arch/arm/plat-s3c/include/plat/devs.h
+		M	arch/arm/plat-s3c64xx/devs.c
+		M	drivers/usb/Makefile
+		M	drivers/usb/host/Kconfig
+		M	drivers/usb/host/Makefile
+
+	Added Files:
+		A	drivers/usb/host/s3c-otg/*
+
+v2.6.28.6-s3c64xx-r1d2 : Byungjae Lee
+	- implemented s3c6410 OTG host role for HID(Keyboard, Mouse)
+	  and Card Reader
+
+	Modified Files:
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-driver.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-hcd.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-kal.h
+		M	drivers/usb/host/s3c-otg/s3c-otg-scheduler-ischeduler.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-scheduler-scheduler.h
+		M	drivers/usb/host/s3c-otg/s3c-otg-transfer-common.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-transferchecker-common.c
+
+v2.6.28.6-s3c64xx-r1d3 : Jongpill Lee
+	- defect is fixed on cpufreq driver
+
+	Modified Files:
+		M	arch/arm/plat-s3c64xx/clock.c
+
+v2.6.28.6-s3c64xx-r1d4 : Jongpill Lee
+        - defect is fixed on pm
+
+	MOdified Fils:
+		M	arch/arm/plat-s3c64xx/pm.c
+
+v2.6.28.6-s3c64xx-r1d5: Kyoungil Kim
+	- Just Second Prevent tag for SMDK6410
+
+v2.6.28.6-s3c64xx-r1d6 : Jonghun Han
+        - update S3C6410 FIMG-2D driver
+
+	Modified Fils:
+		M	arch/arm/plat-s3c/include/plat/regs-g2d.h
+		M	drivers/media/video/samsung/g2d/s3c_fimg2d2x.c
+
+v2.6.28.6-s3c64xx-r2: Kyoungil Kim
+	- Official Release (09.03.09)
+
+v2.6.28.6-s3c64xx-r2d0: Kyoungil Kim
+
+v2.6.28.6-s3c64xx-r2d1: Jaeryul Oh
+	- Fixed Bug in case of rotator function of MFC
+
+	Modified Files:
+		M	drivers/media/video/samsung/mfc/s3c_mfc_instance.c
+
+v2.6.28.6-s3c64xx-r2d2: Jonghun Han
+	- S3C6410 FIMG-3D driver support
+
+	Modified Files:
+		M       arch/arm/mach-s3c6400/include/mach/map.h
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       arch/arm/plat-s3c64xx/devs.c
+		M       drivers/char/s3c_mem.c
+		M       drivers/media/video/samsung/Kconfig
+		M       drivers/media/video/samsung/Makefile
+		M       drivers/media/video/samsung/g2d/s3c_fimg2d2x.c
+
+	Added Files:
+		A       drivers/media/video/samsung/g3d/Kconfig
+		A       drivers/media/video/samsung/g3d/Makefile
+		A       drivers/media/video/samsung/g3d/s3c_fimg3d.c
+		A       drivers/media/video/samsung/g3d/s3c_fimg3d.h		
+
+v2.6.28.6-s3c64xx-r2d3: Jonghun Han
+	- S5PC100 FIMG-2D driver support
+
+	Modified Files:
+		M	drivers/media/video/samsung/g2d/Kconfig
+		M	drivers/media/video/samsung/g2d/s3c_fimg2d2x.c
+
+v2.6.28.6-s3c64xx-r3: Kyoungil Kim
+	- Official Release (09.03.13)
+
+v2.6.28.6-s3c64xx-r3d0: Kyoungil Kim
+
+v2.6.28.6-s3c64xx-r3d1: Byungae Lee
+	- Support SMDK6410 USB Serial Gadget (with CDC ACM)
+
+	Modified Files:
+		M	arch/arm/plat-s3c/include/plat/regs-otg.h
+		M	drivers/usb/gadget/s3c_udc_otg.c
+		M	drivers/usb/gadget/s3c_udc_otg_xfer_dma.c
+		M	drivers/usb/gadget/s3c_udc_otg_xfer_slave.c
+
+v2.6.28.6-s3c64xx-r3d2: Byungae Lee
+	- Removed warning on the debug message for the USB Gadget
+
+	Modified Files:
+		M	drivers/usb/gadget/s3c_udc_otg.c
+		M	drivers/usb/gadget/s3c_udc_otg_xfer_dma.c
+
+v2.6.28.6-s3c64xx-r3d3: SungJun Bae 
+	- Support CMM driver.  
+
+	Added Files:
+		A	drivers/media/video/samsung/cmm/CMMMisc.c
+		A	drivers/media/video/samsung/cmm/CMMMisc.h
+		A	drivers/media/video/samsung/cmm/Kconfig
+		A	drivers/media/video/samsung/cmm/LogMsg.c
+		A	drivers/media/video/samsung/cmm/LogMsg.h
+		A	drivers/media/video/samsung/cmm/Makefile
+		A	drivers/media/video/samsung/cmm/s3c-cmm.c
+		A	drivers/media/video/samsung/cmm/s3c-cmm.h
+
+	Modified Files:
+		M	drivers/media/video/samsung/Kconfig
+		M	drivers/media/video/samsung/Makefile
+
+
+v2.6.28.6-s3c64xx-r4: Jonghun Han
+        - Official Release (09.03.24)
+
+v2.6.28.6-s3c64xx-r4d0: Jonghun Han
+
+v2.6.28.6-s3c64xx-r4d1: Kyoungil Kim
+	- The last tag for s3c64xx branch(09.03.24)
+
+rel-0-0-0 : Kwanghyun La  (Nov.10.2008)
+	It's not fixed version , just only initial copy version for
+	        estimation.
+
+previous samsung-ap-2.6 repository ChangeLog_s5pc1xx for s5pc1xx branch
+-----------------------------------------------------------------------
+dev-0-0-1 : Ilho Lee
+dev-0-0-2 : Ilho Lee
+	Touchscreen D/D added, but Ethernet D/D is being adding.
+
+dev-0-0-3 : Jongpill Lee
+	Support ADC driver and merge adc-s3c64xx.c and adc-s3c24xx.c file
+
+	Removed Files:
+		R A arch/arm/plat-s3c64xx/adc-s3c64xx.c
+
+	Added Files:
+		A arch/arm/plat-s3c/adc.c
+
+	Modified Files:
+		M arch/arm/mach-s3c6410/mach-smdk6410.c
+		M arch/arm/plat-s3c/Kconfig
+		M arch/arm/plat-s3c/Makefile
+		M arch/arm/plat-s3c/include/plat/adc.h
+		M drivers/char/Kconfig
+
+dev-0-0-4 : Jongpill Lee
+	Bug fixed on ADC driver
+
+	Modified Files:
+		M arch/arm/plat-s3c/adc.c
+	
+dev-0-0-5 : Ilho Lee
+	SMC9115 ethernet D/D is working(small_root only)
+
+dev-0-0-6: Jinsung Yang
+	- NAND driver support
+
+	Added files:
+		A arch/arm/configs/smdk6410mtd_defconfig
+		A arch/arm/plat-s3c/include/plat/partition.h
+		A drivers/mtd/nand/s3c_nand.c
+
+	Modified files:
+		M arch/arm/mach-s3c6400/include/mach/map.h
+		M arch/arm/mach-s3c6410/mach-smdk6410.c
+		M arch/arm/plat-s3c/Kconfig
+		M arch/arm/plat-s3c/include/plat/nand.h
+		M arch/arm/plat-s3c/include/plat/regs-nand.h
+		M arch/arm/plat-s3c64xx/devs.c
+		M drivers/mtd/nand/Kconfig
+		M drivers/mtd/nand/Makefile
+
+dev-0-0-7: Sungjun Bae 
+	 - I2S WM8580, I2SWM8990 Complete. 
+	 
+	Modified Files:
+	 	M arch/arm/configs/smdk6410mtd_defconfig arch/arm/configs/smdk6410nfs_defconfig
+		M arch/arm/plat-s3c64xx/include/plat/gpio-bank-d.h
+		M arch/arm/plat-s3c64xx/include/plat/regs-clock.h include/sound/soc.h
+		M sound/soc/soc-core.c sound/soc/codecs/wm8580.c sound/soc/codecs/wm8990.c
+
+dev-0-0-8: Sungjun Bae 
+	- DMA File Structure was changed.
+
+	Modified Files:
+		M arch/arm/plat-s3c/Makefile
+	        M arch/arm/plat-s3c/include/mach/s3c-dma.h
+	        M arch/arm/plat-s3c64xx/Makefile
+	Added Files:
+	        A arch/arm/plat-s3c/dma-pl080.c
+	Removed Files:
+	        R arch/arm/plat-s3c64xx/dma-pl080.c
+
+dev-0-0-9: Ilho Lee
+	- PL330 DMA D/D file added
+
+	Modified Files:
+		M arch/arm/plat-s3c/Makefile
+		M arch/arm/plat-s3c/Kconfig
+
+	Added Files:
+	        A arch/arm/plat-s3c/dma-pl330.c
+	        A arch/arm/plat-s3c/dma-pl330-microcode.c
+
+
+dev-0-0-10: eyryu 
+	- Add SMDKC100 initial.
+
+dev-0-0-11: Ilho Lee
+	- DMA definition files changed
+
+	Modified Files:
+		M arch/arm/mach-s3c6410/dma.c
+		M arch/arm/mach-s5pc100/dma.c
+
+dev-0-0-12: Jinsung Yang
+	- gpiolib support for s5pc1xx architecture
+
+	Modified files:
+		M arch/arm/plat-s5pc1xx/include/plat/regs-gpio.h
+		M arch/arm/mach-s5pc100/include/mach/gpio.h
+		M arch/arm/plat-s3c/gpio-config.c
+		M arch/arm/plat-s3c/include/plat/gpio-cfg-helpers.h
+
+	Added files:
+		A arch/arm/plat-s5pc1xx/gpiolib.c
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-a0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-a1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-b.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-c.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-d.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-e0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-e1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-f0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-f1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-f2.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-f3.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-g0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-g1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-g2.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-g3.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-h0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-h1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-h2.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-h3.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-i.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-j0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-j1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-j2.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-j3.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-j4.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-k0.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-k1.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-k2.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-k3.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-mp00.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-mp01.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-mp02.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-mp03.h
+		A arch/arm/plat-s5pc1xx/include/plat/gpio-bank-mp04.h
+
+dev-0-0-13: eyryu 
+	- Add SMDKC100 clock & serial 
+
+dev-0-0-14: Ilho Lee
+	- ADC D/D added
+
+	Added Files:
+		A arch/arm/plat-s3c24xx/adc.c
+		A arch/arm/plat-s3c64xx/adc.c
+
+dev-0-0-15: eyryu 
+	- Support SMDKC100 UART driver
+	- Add SMDKC100 clock & serial 
+
+rel-1-0-0: Kyoungil Kim
+	- Official Release (08.11.27)
+
+dev-1-0-0: Kyoungil Kim
+
+dev-1-0-1: Ilho Lee
+	- CPU idle added
+
+	Added Files:
+		A arch/arm/mach-s3c6400/idle.h
+		A arch/arm/mach-s5pc100/idle.h
+
+	Modified Files:
+		M arch/arm/mach-s3c6410/cpu.c
+		M arch/arm/mach-s5pc100/cpu.c
+
+dev-1-0-2: Ilho Lee
+	- S3C24XX -> S3C changed in the S3C DMA D/D.
+
+	Modified Files:
+		M arch/arm/mach-s3c6410/dma.c
+		M arch/arm/mach-s5pc100/dma.c
+		M arch/arm/plat-s3c/dma-pl080.c
+		M arch/arm/plat-s3c/dma-pl330.c
+		M arch/arm/plat-s3c/include/plat/s3c-dma.h
+
+dev-1-0-3: Ilho Lee
+	- PL330 DMA D/D is adding..
+
+	Modified Files:
+		M arch/arm/plat-s3c/dma-pl330.c
+		M arch/arm/plat-s3c/dma-pl330-mcode.h
+		M arch/arm/plat-s3c/include/mach/s3c-dma.h
+
+dev-1-0-4: Byungjae Lee
+	- Support File Storage Gadget for SMDK6410 HS USB OTG 
+
+	Modified Files:
+		M arch/arm/mach-s3c6400/include/mach/map.h
+		M arch/arm/mach-s3c6410/cpu.c
+		M arch/arm/mach-s3c6410/mach-smdk6410.c
+		M arch/arm/plat-s3c64xx/devs.c
+		M arch/arm/plat-s3c64xx/include/plat/regs-clock.h
+		M drivers/usb/gadget/Kconfig
+		M drivers/usb/gadget/Makefile
+		M drivers/usb/gadget/epautoconf.c
+		M drivers/usb/gadget/gadget_chips.h
+
+	Added Files:
+		A arch/arm/plat-s3c/include/plat/regs-otg.h
+		A drivers/usb/gadget/s3c_udc.h
+		A drivers/usb/gadget/s3c_udc_otg.c
+
+dev-1-0-5: Ilho Lee
+	- S3C touchscreen D/D changed.
+
+	Modified Files:
+		M drivers/input/touchscreen/s3c-ts.c
+
+dev-1-0-6: Jinsung Yang
+	- Clock system support for S5PC100
+
+	Modified files:
+		M arch/arm/plat-s3c/clock.c
+		M arch/arm/plat-s3c/include/plat/clock.h
+		M arch/arm/plat-s5pc1xx/clock.c
+		M arch/arm/plat-s5pc1xx/s5pc100-clock.c
+		M arch/arm/plat-s5pc1xx/include/plat/pll.h
+		M arch/arm/plat-s5pc1xx/include/plat/regs-clock.h
+
+dev-1-0-7: Jinsung Yang
+	- LCD (LTE480WV) support for SMDKC100
+
+	Modified files:
+		drivers/video/samsung/s5pfb_fimd5x.c
+
+dev-1-0-8: Byungjae Lee
+	- Masked HCLK for USB OTG at register clocks 
+
+	Modified files:
+		M arch/arm/plat-s3c64xx/clock.c
+		M drivers/usb/gadget/s3c_udc_otg.c
+
+dev-1-0-9: Ilho Lee
+	- Ext-interrupts handlers added.
+
+	Added Files:
+		A arch/arm/plat-s5pc1xx/irq-eint.c
+
+dev-1-0-10: Ilho Lee
+	- SMC9115 ethernet(100Mbps) D/D ported.
+
+	Added Files:
+		A arch/arm/plat-s5pc1xx/irq-eint.c
+
+dev-1-0-11: Ilho Lee
+	- dev-adc.c deleted.
+
+	Deleted Files:
+		D arch/arm/plat-s3c/dev-adc.c
+
+rel-1-0-1: Kyoungil Kim
+	- Git Release (08.12.09)
+
+v2.6.28-rc7-s5pc1xx-r0d0: Kyoungil Kim
+	- s5pc1xx rc7 initial git tag
+
+v2.6.28-rc7-s5pc1xx-r0d1: Ilho Lee
+	- PL330 DMA D/D changed.
+
+	Modified files:
+		M arch/arm/plat-s3c/dma-pl330.c
+		M arch/arm/plat-s3c/dma-pl330-mcode.h
+
+v2.6.28-rc7-s5pc1xx-r0d2: Jongpill Lee
+	- System Timer support on SMDKC100
+
+	Added Files:
+		A arch/arm/plat-s5pc1xx/s5pc1xx-time.c
+
+v2.6.28-rc7-s5pc1xx-r0d3: Jongpill Lee
+	- System Timer bug fixed
+
+	Modified Files:
+		M ChangeLog_s5pc1xx
+		M arch/arm/mach-s5pc100/cpu.c
+		M arch/arm/mach-s5pc100/include/mach/map.h
+		M arch/arm/mach-s5pc100/include/mach/tick.h
+		M arch/arm/mach-s5pc100/mach-smdkc100.c
+		M arch/arm/plat-s3c/Makefile
+		M arch/arm/plat-s3c/include/plat/map-base.h
+		M arch/arm/plat-s5pc1xx/Makefile
+		M arch/arm/plat-s5pc1xx/include/plat/regs-sys-timer.h
+
+v2.6.28-rc8-s5pc1xx: Kyoungil Kim
+	- s5pc1xx rc8 patch
+
+v2.6.28-rc8-s5pc1xx-r0d0: Kyoungil Kim
+
+v2.6.28-rc8-s5pc1xx-r0d1: Abhilash Kesavan
+	- S5PC100 NAND driver support
+
+	Added Files:
+		A arch/arm/configs/smdkc100mtd_defconfig
+
+	Modified Files:
+		M arch/arm/mach-s5pc100/include/mach/map.h
+		M arch/arm/mach-s5pc100/mach-smdkc100.c
+		M arch/arm/plat-s3c/Kconfig
+		M arch/arm/plat-s3c/include/plat/partition.h
+		M arch/arm/plat-s5pc1xx/devs.c
+		M drivers/mtd/nand/Kconfig
+		M drivers/mtd/nand/s3c_nand.c
+
+v2.6.28-rc8-s5pc1xx-r0d2: Jinsung Yang
+	- Fix for wrong comments
+
+v2.6.28-rc8-s5pc1xx-r0d3: Jinsung Yang
+	- Merge from s3c64xx branch
+
+v2.6.28-rc8-s5pc1xx-r0d4: Abhilash Kesavan
+	- Touch-up for Nand
+
+	Modified Files:
+		M arch/arm/configs/smdkc100mtd_defconfig
+		M arch/arm/mach-s5pc100/mach-smdkc100.c
+
+
+v2.6.28-rc8-s5pc1xx-r0d5: Abhilash Kesavan
+	- Support for HS-MMC and USB 
+
+	Added Files:
+		A       arch/arm/mach-s5pc100/include/mach/usb-control.h
+		A       arch/arm/mach-s5pc100/setup-sdhci.c
+
+	Modified Files:
+		M       arch/arm/configs/smdkc100mtd_defconfig
+		M       arch/arm/configs/smdkc100nfs_defconfig
+		M       arch/arm/mach-s5pc100/Kconfig
+		M       arch/arm/mach-s5pc100/Makefile
+		M       arch/arm/mach-s5pc100/cpu.c
+		M       arch/arm/mach-s5pc100/include/mach/map.h
+		M       arch/arm/mach-s5pc100/mach-smdkc100.c
+		M       arch/arm/plat-s3c/include/plat/sdhci.h
+		M       arch/arm/plat-s5pc1xx/devs.c
+		M       arch/arm/plat-s5pc1xx/include/plat/regs-clock.h
+		M       arch/arm/plat-s5pc1xx/include/plat/regs-sys.h
+		M       drivers/mmc/host/Kconfig
+		M       drivers/mmc/host/sdhci-s3c.c
+		M       drivers/usb/Kconfig
+		M       drivers/usb/gadget/Kconfig
+		M       drivers/usb/gadget/f_rndis.c
+		M       drivers/usb/gadget/s3c_udc_otg.c
+		M       drivers/usb/host/ohci-hcd.c
+		M       drivers/usb/host/ohci-s3c2410.c
+
+v2.6.28-rc8-s5pc1xx-r0d6: Ilho Lee
+	- Touchscreen D/D got enabled and PL330 S&G DMA operations supported.
+
+	Modified Files:
+		M arch/arm/mach-s5pc100/mach-smdkc100.c
+		M arch/arm/plat-s3c/dma-pl330.c
+
+v2.6.28-rc8-s5pc1xx-r0d7: Abhilash Kesavan
+	- Support for HS-MMC for S5PC1XX (Completed)
+
+	Added Files:
+		A	drivers/mmc/host/s3c-hsmmc.c
+		A	drivers/mmc/host/s3c-hsmmc.h
+		A	arch/arm/plat-s5pc1xx/include/plat/regs-hsmmc.h
+
+	Deleted Files:	
+		D       arch/arm/mach-s5pc100/setup-sdhci.c
+
+	Modified Files:
+	        M       arch/arm/configs/smdkc100mtd_defconfig
+		M       arch/arm/configs/smdkc100nfs_defconfig
+	        M       arch/arm/mach-s5pc100/Kconfig
+		M       arch/arm/mach-s5pc100/Makefile
+		M       arch/arm/mach-s5pc100/cpu.c
+		M       arch/arm/mach-s5pc100/mach-smdkc100.c
+	        M       arch/arm/plat-s5pc1xx/devs.c
+	        M       drivers/mmc/host/Kconfig
+	        M       drivers/mmc/host/Makefile
+
+v2.6.28-rc8-s5pc1xx-r0d8: Jongpill Lee
+	- Bug fixed on clock
+
+	Modified Files:
+		M	arch/arm/plat-s3c/clock.c
+
+v2.6.28-rc8-s5pc1xx-r0d9: Abhilash Kesavan
+	- Support for ADC and PWM for S5PC100
+
+	Added Files:
+		A	arch/arm/plat-s5pc1xx/adc.c
+		A	arch/arm/plat-s5pc1xx/pwm-s5pc100.c
+		A	arch/arm/plat-s5pc1xx/pwm-s5pc100.h
+
+	Modified Files:
+		M	arch/arm/configs/smdkc100mtd_defconfig
+		M	arch/arm/configs/smdkc100nfs_defconfig
+		M	arch/arm/mach-s5pc100/mach-smdkc100.c
+		M	arch/arm/plat-s3c/Kconfig
+		M	arch/arm/plat-s3c/include/plat/regs-timer.h
+		M	arch/arm/plat-s5pc1xx/Kconfig
+		M	arch/arm/plat-s5pc1xx/Makefile
+		M	drivers/mmc/host/s3c-hsmmc.c
+		M	drivers/video/samsung/s3cfb.h
+		M	drivers/video/samsung/s3cfb_fimd5x.c
+
+v2.6.28-rc8-s5pc1xx-r1: Kyoungil Kim
+	- Internal Release(09.01.12)
+
+v2.6.28-rc8-s5pc1xx-v1: Kyoungil Kim
+	- Official Release(09.01.12)
+
+v2.6.28-rc8-s5pc1xx-r1d0: Kyoungil Kim
+
+v2.6.28-rc8-s5pc1xx-r1d1: JongPill Lee
+	- Support IDLE Function on S5PC100
+
+	Added Files:
+		A	arch/arm/plat-s5pc1xx/include/plat/regs-power.h
+
+	Modified Files:
+		M	arch/arm/mach-s5pc100/cpu.c
+		M	arch/arm/mach-s5pc100/include/mach/system.h
+
+v2.6.28-rc8-s5pc1xx-r1d2: Abhilash Kesavan
+	- Support OneNand on S5PC100 (I)
+
+	Added Files:
+		A       arch/arm/plat-s3c/include/plat/regs-onenand.h
+
+	Modified Files:
+		M       arch/arm/mach-s5pc100/mach-smdkc100.c
+		M       arch/arm/mach-s5pc100/include/mach/map.h
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       arch/arm/plat-s3c/include/plat/partition.h
+		M       drivers/mtd/onenand/Makefile
+		M       drivers/mtd/onenand/onenand_bbt.c
+		M       drivers/mtd/onenand/s3c_onenand.c
+		M       drivers/mtd/onenand/s3c_onenand.h
+
+v2.6.28-rc8-s5pc1xx-r1d3: Kyoungil Kim
+	- Support Keypad on S5PC100
+
+	Modified Files:
+		M	arch/arm/configs/smdkc100_defconfig
+		M	arch/arm/configs/smdkc100mtd_defconfig
+		M	arch/arm/configs/smdkc100nfs_defconfig
+		M	arch/arm/mach-s5pc100/include/mach/map.h
+		M	arch/arm/mach-s5pc100/mach-smdkc100.c
+		M	arch/arm/plat-s5pc1xx/clock.c
+		M	arch/arm/plat-s5pc1xx/devs.c
+		M	drivers/input/keyboard/Kconfig
+		M	drivers/input/keyboard/s3c-keypad.h
+
+v2.6.28-rc8-s5pc1xx-r1d4: Abhilash Kesavan
+	- Support HS-SPI on S5PC100
+
+	Added Files:
+		A       arch/arm/plat-s3c/include/plat/regs-spi.h
+		A       drivers/spi/hspi-s3c.c
+		A       drivers/spi/hspi-s3c.h
+		A	drivers/spi/spi-dev.c
+		A	drivers/spi/spi-dev.h
+
+	Modified Files:
+		M       arch/arm/mach-s5pc100/include/mach/map.h
+	        M	arch/arm/mach-s5pc100/mach-smdkc100.c
+		M	arch/arm/plat-s5pc1xx/devs.c
+		M	drivers/spi/Kconfig
+		M	drivers/spi/Makefile
+
+v2.6.28-rc8-s5pc1xx-r1d5: Jongpill Lee
+	- Support APM on S5PC100
+
+	Added Files:
+		A       arch/arm/plat-s5pc1xx/include/plat/pm.h
+		A       arch/arm/plat-s5pc1xx/pm.c
+		A       arch/arm/mach-s5pc100/pm.c
+		A       arch/arm/plat-s5pc1xx/sleep.S
+
+	Modified Files:
+		M       arch/arm/mach-s5pc100/Makefile
+		M       arch/arm/mach-s5pc100/include/mach/regs-irq.h
+		M       arch/arm/mach-s5pc100/mach-smdkc100.c
+		M       arch/arm/plat-s5pc1xx/Makefile
+		M       arch/arm/plat-s5pc1xx/include/plat/regs-power.h
+		M       arch/arm/plat-s5pc1xx/s5pc100-clock.c
+		M       drivers/serial/s5pc100.c
+		M       drivers/serial/samsung.c
+		M       drivers/serial/samsung.h
+		M       drivers/video/samsung/s3cfb_fimd5x.c
+
+v2.6.28-rc8-s5pc1xx-r1d6: Jongpill Lee
+	- Support RTC Wakeup from Sleep mode
+
+	Modified Files:
+		M arch/arm/plat-s5pc1xx/pm.c
+
+v2.6.28-rc8-s5pc1xx-r1d7: PyoungJae Jung/Jiun Yu
+	- Support MFC driver
+	
+	Modified Files:
+		M       arch/arm/mach-s5pc100/include/mach/map.h
+		M	arch/arm/mach-s5pc100/mach-smdkc100.c
+		M	arch/arm/plat-s3c/include/plat/devs.h
+		M	arch/arm/plat-s5pc1xx/devs.c
+	 
+v2.6.28-rc8-s5pc1xx-r2: Kyoungil Kim
+	- Official Release(09.01.23)
+
+v2.6.28-rc8-s5pc1xx-r2d0: Kyoungil Kim
+
+v2.6.28-rc8-s5pc1xx-r2d1: Byungjae Lee
+	- Support CDC Ethernet and RNDIS
+	- for SMDKc100 UBS OTG Deive role on DMA mode
+	
+	Modified Files:
+		M	arch/arm/mach-s5pc100/mach-smdkc100.c
+		M	arch/arm/plat-s3c/include/plat/regs-otg.h
+		M	drivers/usb/gadget/Kconfig
+		M	drivers/usb/gadget/epautoconf.c
+		M	drivers/usb/gadget/s3c_udc.h
+		M	drivers/usb/gadget/s3c_udc_otg.c
+		M	drivers/usb/gadget/u_ether.c
+
+	Added Files:
+		A	drivers/usb/gadget/s3c_udc_otg_xfer_dma.c
+		A	drivers/usb/gadget/s3c_udc_otg_xfer_slave.c
+
+
+v2.6.28-rc8-s5pc1xx-r2d2: Jinsung Yang
+	- S5PC100 FIMC Driver
+	- Compilable version
+
+	Modified files:
+		M       drivers/media/video/Kconfig
+		M       drivers/media/video/Makefile
+		M       include/linux/i2c-id.h
+	
+	Added files:
+		A       arch/arm/plat-s5pc1xx/include/plat/fimc.h
+		A       arch/arm/plat-s5pc1xx/include/plat/regs-fimc.h
+		A       drivers/media/video/samsung/Kconfig
+		A       drivers/media/video/samsung/Makefile
+		A       drivers/media/video/samsung/s3c_fimc.h
+		A       drivers/media/video/samsung/s3c_fimc4x_regs.c
+		A       drivers/media/video/samsung/s3c_fimc_cfg.c
+		A       drivers/media/video/samsung/s3c_fimc_core.c
+		A       drivers/media/video/samsung/s3c_fimc_v4l2.c
+		A       drivers/media/video/samsung/s5k4ba.c
+		A       drivers/media/video/samsung/s5k4ba.h
+
+v2.6.28-rc8-s5pc1xx-r2d3: Jinsung Yang
+	- S5PC100 FIMC device setup support
+
+	Modified files:
+		M       arch/arm/mach-s5pc100/include/mach/map.h
+		M       arch/arm/mach-s5pc100/mach-smdkc100.c
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       arch/arm/plat-s5pc1xx/Kconfig
+		M       arch/arm/plat-s5pc1xx/Makefile
+
+	Added files:
+		A       arch/arm/plat-s5pc1xx/dev-fimc0.c
+		A       arch/arm/plat-s5pc1xx/dev-fimc1.c
+		A       arch/arm/plat-s5pc1xx/dev-fimc2.c
+		A       arch/arm/plat-s5pc1xx/setup-fimc0.c
+		A       arch/arm/plat-s5pc1xx/setup-fimc1.c
+		A       arch/arm/plat-s5pc1xx/setup-fimc2.c
+
+v2.6.28-rc8-s5pc1xx-r2d4: Kyoungil Kim
+	- modified otg_phy_init proto type
+
+	Modified files:
+		M       drivers/usb/gadget/s3c_udc_otg.c
+
+v2.6.28-rc8-s5pc1xx-r2d5: Hatim Ali
+	- S5PC100 Watchdog Timer support
+
+	Modified files:
+		M	arch/arm/configs/smdkc100nfs_defconfig
+		M	arch/arm/mach-s5pc100/include/mach/map.h
+		M	arch/arm/mach-s5pc100/mach-smdkc100.c
+		M	arch/arm/plat-s5pc1xx/devs.c
+		M	drivers/watchdog/Kconfig
+
+v2.6.28-rc8-s5pc1xx-r2d6: Abhilash Kesavan
+	- S5PC100 AC97 WM9713 support
+
+	Modified files:
+		M	arch/arm/mach-s5pc100/dma.c
+		M       arch/arm/mach-s5pc100/include/mach/map.h
+		M       arch/arm/mach-s5pc100/mach-smdkc100.c
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       arch/arm/plat-s5pc1xx/devs.c
+		M       sound/soc/codecs/wm9713.c
+		M       sound/soc/s5pc1xx/Kconfig
+		M       sound/soc/s5pc1xx/Makefile
+
+	Added Files:
+		A	sound/soc/s5pc1xx/s5pc1xx-ac97.c
+		A	sound/soc/s5pc1xx/s5pc1xx-ac97.h
+		A	sound/soc/s5pc1xx/smdkc100_wm9713.c
+
+v2.6.28-rc8-s5pc1xx-r2d7: Jinsung Yang
+	- S5PC100 FIMC driver
+	- Camera input and memory output support
+	- Both camera channels (A and B) support
+	- Preview and capture related functionalities support
+	- S5K3BA and S5K4BA module support
+
+v2.6.28-rc8-s5pc1xx-r2d8: Hatim Ali
+	- S5PC100 Notification LED support
+
+	Modified files:
+		M   	arch/arm/Kconfig
+		M   	arch/arm/mach-s5pc100/Makefile
+
+	Added Files:
+		A	arch/arm/mach-s5pc100/leds-s5pc100.c
+		A	arch/arm/mach-s5pc100/leds.c
+		A	arch/arm/mach-s5pc100/leds.h
+
+v2.6.28-rc8-s5pc1xx-r2d9: Abhilash Kesavan
+	- Enabled LCD/OSD Support for S5PC100
+
+	Modified files:
+		M	arch/arm/plat-s5pc1xx/devs.c
+		M	drivers/video/samsung/s3cfb.h
+		M	drivers/video/samsung/s3cfb_spi.c
+
+v2.6.28-rc8-s5pc1xx-r2d10: Jinsung Yang
+	- S5PC100 FIMC driver
+	- Alpha Release
+	- Camera input support
+	- Memory input support
+	- Memory output support
+	- LCD FIFO output support
+	- Both camera channels (A and B) support
+	- Preview and capture related functionalities support
+	- S5K3BA and S5K4BA module support
+
+v2.6.28.6-s5pc1xx: Kyoungil Kim
+
+v2.6.28.6-s5pc1xx-r0d0: Kyoungil Kim
+
+v2.6.28.6-s5pc1xx-r0d1: Abhilash Kesavan
+	- Pre-Beta Version
+
+v2.6.28.6-s5pc1xx-r0d2: Jinsung Yang
+	- FIMC support for SMDKC100
+	- Including reserved memory feature with bootmem
+	- All functions have been finished on the planning except for 'Input Rotator' with LCD FIFO Output
+
+
+v2.6.28.6-s5pc1xx-r0d3: Abhilash Kesavan
+	- IrDA support for S5PC100
+
+	Modified files:
+		M   	drivers/net/irda/s3c-sir.c
+		M   	include/net/irda/irda_device.h
+
+v2.6.28.6-s5pc1xx-r0d4: Jae-Cheol Lee
+	- Support CPUFREQ for SMDKC100
+	- DFS is only enabled, not DVS.
+	
+	Modified files:
+		M	arch/arm/plat-s5pc1xx/s5pc100-clock.c
+		M 	arch/arm/Kconfig
+		M	arch/arm/plat-s5pc1xx/Makefile
+		M	arch/arm/plat-s3c/clock.c
+
+	Added files:
+		A	arch/arm/plat-s5pc1xx/s5pc1xx-cpufreq.c
+		A	arch/arm/plat-s5pc1xx/changediv.S
+		A	arch/arm/plat-s5pc1xx/ltc3714.c
+
+v2.6.28.6-s5pc1xx-r0d5: Kukjin Kim
+	- System Timer Modified for EVT1
+
+	Modified files:
+		M	arch/arm/plat-s5pc1xx/include/plat/regs-sys-timer.h
+		M	arch/arm/plat-s5pc1xx/s5pc1xx-time.c
+
+v2.6.28.6-s5pc1xx-r0d6: Jonghun Han
+        - S5PC100 FIMG-2D driver support
+        Modified files:
+		M       arch/arm/mach-s5pc100/include/mach/map.h
+		M       arch/arm/mach-s5pc100/mach-smdkc100.c
+		M       arch/arm/plat-s3c/include/plat/regs-g2d.h
+		M       arch/arm/plat-s5pc1xx/devs.c
+		M       drivers/media/video/samsung/g2d/Kconfig
+		M       drivers/media/video/samsung/g2d/s3c_fimg2d2x.c
+
+v2.6.28.6-s5pc1xx-r0d7: Jae-Cheol Lee
+	- Support SMDKC100 EVT1 POP type (Onenand+mDDR+OneDRAM)
+	Modified files:
+		M	arch/arm/configs/smdkc100onenand_defconfig
+		M	arch/arm/plat-s5pc1xx/cpu.c
+		M	arch/arm/plat-s5pc1xx/s5pc100-clock.c
+
+v2.6.28.6-s5pc1xx-r0d8: PyoungJae Jung/JiUn Yu
+	- Support MFC (FIMV) for s5pc100
+	- MFC driver is Alpha version
+	- remove CMM support and support bootmem memory secure way
+	- change directory name to separate to S3C6410 MFC driver
+
+	Added files:
+		A	drivers/media/video/samsung/mfc40/command_control_fw.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_errorno.h
+		A	drivers/media/video/samsung/mfc40/h263_dec_fw.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_fw.h
+		A	drivers/media/video/samsung/mfc40/h264_dec_fw.c
+		A	drivers/media/video/samsung/mfc40/s3c-mfc.h
+		A	drivers/media/video/samsung/mfc40/h264_enc_fw.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_interface.h
+		A	drivers/media/video/samsung/mfc40/Kconfig
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_intr.c
+		A	drivers/media/video/samsung/mfc40/Makefile
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_intr.h
+		A	drivers/media/video/samsung/mfc40/mp2_dec_fw.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_logmsg.c
+		A	drivers/media/video/samsung/mfc40/mp4_dec_fw.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_logmsg.h
+		A	drivers/media/video/samsung/mfc40/mp4_dec_order_fw.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_memory.c
+		A	drivers/media/video/samsung/mfc40/mp4_enc_fw.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_memory.h
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_buffer_manager.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_opr.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_buffer_manager.h
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_opr.h
+		A	drivers/media/video/samsung/mfc40/s3c-mfc.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_types.h
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_common.c
+		A	drivers/media/video/samsung/mfc40/vc1_dec_fw.c
+		A	drivers/media/video/samsung/mfc40/s3c_mfc_common.h
+		A	arch/arm/plat-s5pc1xx/include/plat/regs-mfc.h
+
+
+	Modified files:
+		M	arch/arm/mach-s5pc100/mach-smdkc100.c
+
+v2.6.28.6-s5pc1xx-r0d9: Jonghun Han
+        - S5PC100 FIMG-3D driver support
+        Modified files:
+			M	arch/arm/plat-s3c/dma-pl330.c
+			M	arch/arm/plat-s3c/include/mach/s3c-dma.h
+			M	drivers/char/s3c_mem.c
+			M	drivers/char/s3c_mem.h
+			M	drivers/media/video/samsung/g3d/Kconfig
+			M	drivers/media/video/samsung/g3d/s3c_fimg3d.h
+
+v2.6.28.6-s5pc1xx-r0d10: Seungchull Suh
+	- SMC9115 works correctly. Before, full-duplex mode is not set.
+			M	drivers/net/smc911x.c
+
+
+v2.6.28.6-s5pc1xx-r1: Kyoungil Kim
+	- Official Release(09.03.20)
+
+v2.6.28.6-s5pc1xx-r1d0: Kyoungil Kim
+
+v2.6.28.6-s5pc1xx-r1d1: Jaeryul Oh
+	- Support JPEG for s5pc100
+
+	Added files:
+		A	drivers/media/video/samsung/jpeg_v2/jpg_mem.c
+		A	drivers/media/video/samsung/jpeg_v2/jpg_misc.c
+		A	drivers/media/video/samsung/jpeg_v2/s3c-jpeg.c
+		A	drivers/media/video/samsung/jpeg_v2/jpg_opr.c
+		A	drivers/media/video/samsung/jpeg_v2/log_msg.c
+
+		A	drivers/media/video/samsung/jpeg_v2/log_msg.h
+		A	drivers/media/video/samsung/jpeg_v2/jpg_conf.h
+		A	drivers/media/video/samsung/jpeg_v2/jpg_mem.h
+		A	drivers/media/video/samsung/jpeg_v2/jpg_misc.h
+		A	drivers/media/video/samsung/jpeg_v2/regs-jpeg.h
+		A	drivers/media/video/samsung/jpeg_v2/s3c-jpeg.h
+		A	drivers/media/video/samsung/jpeg_v2/jpg_opr.h
+		A	drivers/media/video/samsung/jpeg_v2/Makefile
+		A	drivers/media/video/samsung/jpeg_v2/Kconfig
+
+	Modified files:
+		M	arch/arm/mach-s5pc100/include/mach/map.h
+		M	arch/arm/mach-s5pc100/mach-smdkc100.c
+		M	arch/arm/plat-s5pc1xx/devs.c
+		M	drivers/media/video/samsung/Kconfig
+		M	drivers/media/video/samsung/Makefile
+
+v2.6.28.6-s5pc1xx-r1d2: Kyoungil Kim
+	- The last tag for s5pc1xx branch(09.03.24)
+
+current linux-2.6-samsung repository ChangeLog
+-----------------------------------------------------------------------
+v2.6.28.6-samsung: Kyoungil Kim
+	- Merge s3c64xx branch and s5pc1xx branch to master branch(09.03.24)
+
+v2.6.28.6-samsung-r0d0: Kyoungil Kim
+
+v2.6.28.6-samsung-r0d1: Kukjin Kim
+	- Remove swp file
+
+	Removed Files:
+		R	arch/arm/plat-s3c/include/plat/.cpu-freq.h.swp 
+
+v2.6.28.6-samsung-r0d2: Kyoungil Kim
+	- Unified the ChangeLog files
+
+	Modified Files:
+		M       ChangeLog
+
+	Deleted Files:
+		D	ChangeLog_s3c64xx	
+		D	ChangeLog_s5pc1xx
+
+v2.6.28.6-samsung-r0d3: Kukjin Kim
+	- System Timer initialize modified
+
+	Modified Files:
+		M	arch/arm/plat-s5pc1xx/s5pc1xx-time.c
+
+v2.6.28.6-samsung-r0d4: Kukjin Kim
+	- System Timer init and setup function remodified
+
+	Modified Files:
+		M	arch/arm/plat-s5pc1xx/s5pc1xx-time.c
+
+v2.6.28.6-samsung-r0d5: Kukjin Kim
+	- Support extcsd revision 1.3
+
+	Modified Files:
+		M	drivers/mmc/core/mmc.c
+
+v2.6.28.6-samsung-r0d6: Jaeryul Oh
+	- JPEG for c100 is updated
+
+	Modified Files:
+		M   drivers/media/video/samsung/Kconfig
+		M   drivers/media/video/samsung/jpeg_v2/jpg_mem.h
+		M   drivers/media/video/samsung/jpeg_v2/jpg_opr.c
+		M   drivers/media/video/samsung/jpeg_v2/jpg_opr.h
+		M   drivers/media/video/samsung/jpeg_v2/s3c-jpeg.c
+		M   drivers/media/video/samsung/jpeg_v2/s3c-jpeg.h
+
+v2.6.28.6-samsung-r0d7: Jae-Cheol Lee
+	- Adopting system timer h/w bug workaround
+
+	Modified files:
+	 	M       arch/arm/plat-s5pc1xx/s5pc1xx-time.c
+
+v2.6.28.6-samsung-r0d8: Byungjae Lee
+	- Implemented OTG Host role for SMDKC100
+	  OTG Host role support only MassStorage and HID(Keyboard, Mouse)
+
+	Modified Files:
+		M	arch/arm/configs/smdkc100mtd_defconfig
+		M	arch/arm/configs/smdkc100onenand_defconfig
+		M	arch/arm/mach-s3c6410/mach-smdk6410.c
+		M	arch/arm/mach-s5pc100/include/mach/map.h
+		M	arch/arm/mach-s5pc100/mach-smdkc100.c
+		M	arch/arm/plat-s5pc1xx/devs.c
+		M	drivers/usb/host/Kconfig
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-debug.h
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-driver.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-driver.h
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-hcd.h
+		M	drivers/usb/host/s3c-otg/s3c-otg-oci.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-oci.h
+
+v2.6.28.6-samsung-r0d9: Jonghun Han
+	- Support YUV422 Interleave output for FIMC
+
+	Modified Files:
+		M	drivers/media/video/samsung/fimc/s3c_fimc.h
+		M	drivers/media/video/samsung/fimc/s3c_fimc3x_regs.c
+		M	drivers/media/video/samsung/fimc/s3c_fimc_cfg.c
+
+v2.6.28.6-samsung-r0d10: Kyoungil Kim
+	- change the smc911 driver from full duplex to half duplex
+
+	Modified Files:
+		M	drivers/net/smc911x.c
+
+v2.6.28.6-samsung-r0d11: Jae-Cheol Lee
+	- Support SMDK6440 EVT0 board
+
+	Modified Files:
+		M	arch/arm/mach-s5p6440/mach-smdk6440.c
+		M	arch/arm/plat-s5p64xx/include/plat/pll.h
+
+v2.6.28.6-samsung-r0d12: Kyoungil Kim
+	- Prevent for SMDKC100 MM IP
+
+v2.6.28.6-samsung-r0d13: Jae-Cheol Lee
+	- Fixed PLL calculation bug in MASK value
+
+	Modified Files:
+		M 	arch/arm/plat-s3c64xx/include/plat/pll.h
+		M	arch/arm/plat-s5pc1xx/include/plat/pll.h
+
+v2.6.28.6-samsung-r0d14: Byungjae Lee
+	- Implemented USB OTG Device role for SMDK6440
+
+	Modified Files:
+		M	arch/arm/configs/smdk6440ramdisk_defconfig
+		M	arch/arm/mach-s5p6440/mach-smdk6440.c
+		M	arch/arm/plat-s3c/include/plat/regs-otg.h
+		M	arch/arm/plat-s5p64xx/devs.c
+		M	arch/arm/plat-s5p64xx/include/plat/regs-clock.h
+		M	drivers/usb/gadget/Kconfig
+		M	drivers/usb/gadget/s3c_udc.h
+		M	drivers/usb/gadget/s3c_udc_otg.c
+
+v2.6.28.6-samsung-r0d15: Jongpill Lee
+	- Modify code for SPi
+
+	Modified Files
+		M	drivers/spi/hspi-s3c64xx.c
+
+v2.6.28.6-samsung-r1: Jaeryul Oh
+	- Official Release (09.04.06)
+
+v2.6.28.6-samsung-r1d0: Jae-Cheol Lee
+	- Modified default configuration for SMDK6440
+	Modified Files:
+		M	arch/arm/configs/smdk6440ramdisk_defconfig
+
+v2.6.28.6-samsung-r1d1: Jaeryul Oh
+	- MFC, JPEG suspend/resume related code for SMDK6410 changed
+	Modified Files :
+		M       drivers/media/video/samsung/jpeg/jpg_mem.c
+		M       drivers/media/video/samsung/jpeg/s3c-jpeg.c
+		M       drivers/media/video/samsung/mfc10/s3c_mfc.c
+
+v2.6.28.6-samsung-r1d2: Jae-Cheol Lee
+	- Modified voltage regulator control code for SMDKC100
+	Modified Files :
+		M	arch/arm/plat-s5pc1xx/ltc3714.c
+
+v2.6.28.6-samsung-r1d3: Jae-Cheol Lee
+	- Support CHIPID for S5P6440
+	Modified Files:
+		M	arch/arm/plat-s5pc1xx/cpu.c
+
+v2.6.28.6-samsung-r1d4: Jiun Yu, PyoungJae Jung
+	- fixed cache issue in MFC driver
+
+v2.6.28.6-samsung-r1d5: Jae-Cheol Lee
+	- Change Console UART port 0 -> 1 for SMDK6440
+	Modified Files:
+		M	arch/arm/configs/smdk6440ramdisk_defconfig
+
+v2.6.28.6-samsung-r1d6: Byungjae Lee
+	- Fixed BUG USB OTG Device role for SMDK6440 and C100
+
+	Modified Files:
+		M	drivers/usb/gadget/s3c_udc_otg.c
+
+v2.6.28.6-samsung-r1d7: Jongpill LEe
+	- Support RTC for S5P6440
+
+	Modified files:
+		M       arch/arm/mach-s5p6440/include/mach/map.h
+		M       arch/arm/mach-s5p6440/mach-smdk6440.c
+		M       arch/arm/plat-s3c/include/plat/regs-rtc.h
+		M       arch/arm/plat-s5p64xx/devs.c
+		M       drivers/rtc/Kconfig
+		M       drivers/rtc/rtc-s3c.c
+
+v2.6.28.6-samsung-r2: Kyoungil Kim
+	- Official Release for SMDK6410(09.04.09)
+
+v2.6.28.6-samsung-r2d0: Jongpill LEe
+        - Support Watchdog timer for S5P6440
+
+	Modified Files:
+		M       arch/arm/mach-s5p6440/include/mach/map.h
+		M       arch/arm/mach-s5p6440/mach-smdk6440.c
+		M       arch/arm/plat-s5p64xx/devs.c
+		M       drivers/rtc/rtc-s3c.c
+		M       drivers/watchdog/Kconfig
+
+v2.6.28.6-samsung-r2d1: Jongpill Lee
+	- Support ADC Driver for S5P6440
+
+	Modified Files:
+		M       arch/arm/mach-s5p6440/include/mach/map.h
+		M       arch/arm/mach-s5p6440/mach-smdk6440.c
+		M       arch/arm/plat-s3c64xx/adc.c
+		M       arch/arm/plat-s5p64xx/Kconfig
+		M       arch/arm/plat-s5p64xx/devs.c
+
+v2.6.28.6-samsung-r2d2: Jiun, Yu, PyoungJae Jung
+	- fixed cache issue in MFC1.0(6410) driver
+
+	Modified Files :
+		M	drivers/media/video/samsung/mfc10/s3c_mfc_set_config.c
+
+v2.6.28.6-samsung-r2d3: Jiun, Yu, PyoungJae Jung
+	- fixed cache issue in MFC1.0(6410) driver
+	- changed cache update way to dma_cache_maint
+
+	Modified Files :
+		M	drivers/media/video/samsung/mfc10/s3c_mfc_set_config.c
+		M	drivers/media/video/samsung/mfc10/s3c_mfc.c
+		M	drivers/media/video/samsung/mfc10/s3c_mfc_databuf.c
+		M	drivers/media/video/samsung/mfc10/s3c_mfc_instance.c
+		M	drivers/media/video/samsung/mfc10/s3c_mfc_set_config.c
+
+v2.6.28.6-samsung-r2d4: Jae-Cheol Lee
+	- Support DVFS on SMDK6440 board
+
+	Modified Files :
+		M	arch/arm/Kconfig
+		M	arch/arm/plat-s5p64xx/Makefile
+		M	arch/arm/plat-s5p64xx/clock.c
+		M 	arch/arm/plat-s5p64xx/ltc3714.c
+		M 	arch/arm/plat-s5p64xx/s5p64xx-cpufreq
+
+v2.6.28.6-samsung-r2d5: Jongpill Lee
+	- Modify some code for S5PC100
+
+	Modified Files :
+		M       arch/arm/plat-s5pc1xx/include/plat/regs-clock.h
+		M       arch/arm/plat-s5pc1xx/include/plat/regs-power.h
+
+v2.6.28.6-samsung-r2d6: Jae-Cheol Lee
+	- Support backlight class by PWM on SMDK6440 board
+
+	Added Files :
+		A	arch/arm/plat-s5p64xx/pwm.c
+	
+	Modified Files :
+		M	arch/arm/configs/smdk6440ramdisk_defconfig
+		M	arch/arm/mach-s5p6440/cpu.c
+		M	arch/arm/mach-s5p6440/mach-smdk6440.c
+		M	arch/arm/plat-s3c/include/plat/clock.h
+		M	arch/arm/plat-s3c/pwm-clock.c
+		M	arch/arm/plat-s5p64xx/Kconfig
+		M	arch/arm/plat-s5p64xx/Makefile
+		M	arch/arm/plat-s5p64xx/clock.c
+		M	arch/arm/plat-s5p64xx/pwm.c
+		M	drivers/video/samsung/s3cfb_fimd5x.c
+
+v2.6.28.6-samsung-r2d7: Jaeryul Oh
+	- MFC suspend/resume related code for SMDK6410 updated
+	Modified Files :
+		M       drivers/media/video/samsung/mfc10/s3c_mfc.c
+		M       drivers/media/video/samsung/mfc10/s3c_mfc_config.h
+
+v2.6.28.6-samsung-r2d8: Jinsung Yang
+	- The 1st phase of MIPI-CSI support
+
+	Addes files:
+		A       arch/arm/plat-s5pc1xx/dev-csis.c
+		A	arch/arm/plat-s5pc1xx/include/plat/csis.h
+		A	arch/arm/plat-s5pc1xx/include/plat/regs-csis.h
+		A	arch/arm/plat-s5pc1xx/setup-csis.c
+		A	drivers/media/video/samsung/fimc/s3c_csis.c
+		A	drivers/media/video/samsung/fimc/s3c_csis.h
+	
+	Modified files:
+		M       arch/arm/mach-s5pc100/include/mach/map.h
+		M       arch/arm/mach-s5pc100/mach-smdkc100.c
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       arch/arm/plat-s5pc1xx/Kconfig
+		M       arch/arm/plat-s5pc1xx/Makefile
+		M       arch/arm/plat-s5pc1xx/clock.c
+		M       arch/arm/plat-s5pc1xx/include/plat/regs-clock.h
+		M       drivers/media/video/samsung/fimc/Kconfig
+		M       drivers/media/video/samsung/fimc/Makefile
+		M       drivers/media/video/samsung/fimc/s3c_fimc.h
+
+v2.6.28.6-samsung-r2d9: Jongpill Lee
+	- Temporary support APM for S5P6440
+
+	Added Files:
+		A       arch/arm/mach-s5p6440/pm.c
+		A       arch/arm/plat-s5p64xx/include/plat/pm.h
+		A       arch/arm/plat-s5p64xx/pm.c
+		A       arch/arm/plat-s5p64xx/sleep.S
+
+	Modified Files:
+		M       arch/arm/mach-s5p6440/Makefile
+		M       arch/arm/mach-s5p6440/include/mach/gpio.h
+		M       arch/arm/mach-s5p6440/include/mach/regs-irq.h
+		M       arch/arm/mach-s5p6440/mach-smdk6440.c
+		M       arch/arm/plat-s5p64xx/Makefile
+		M       arch/arm/plat-s5p64xx/include/plat/regs-gpio.h
+		M       drivers/video/samsung/s3cfb_fimd5x.c
+
+v2.6.28.6-samsung-r2d10: Jae-Cheol Lee
+	- Support backlight class driver by PWM on SMDK6410
+
+	Added Files:
+		A 	arch/arm/plat-s3c64xx/pwm.c
+
+	Modified Files:
+		M	arch/arm/mach-s5p6440/include/mach/gpio.h
+		M   	arch/arm/mach-s3c6410/cpu.c
+		M   	arch/arm/mach-s3c6410/mach-smdk6410.c
+		M   	arch/arm/plat-s3c64xx/Kconfig
+		M   	arch/arm/plat-s3c64xx/Makefile
+
+v2.6.28.6-samsung-r2d11: jongpill Lee
+	- bug fix on GPIO for S5P6440
+
+	MOdified Files:
+		M	arch/arm/mach-s5p6440/include/mach/gpio.h	
+
+v2.6.28.6-samsung-r2d12: jongpill Lee
+	- APM Support for S5P6440
+
+	Modified Files:
+		M       arch/arm/plat-s3c64xx/sleep.S
+
+v2.6.28.6-samsung-r2d13: Jae-Cheol Lee
+	- Support old style PWM driver for SMDK6410
+
+	Modified Files:
+		M   	arch/arm/plat-s3c64xx/Kconfig
+		M   	arch/arm/plat-s3c64xx/Makefile
+		M   	arch/arm/plat-s3c64xx/pwm-s3c6410.c
+		M   	arch/arm/plat-s3c64xx/pwm-s3c6410.h
+		M   	drivers/video/samsung/s3cfb_fimd4x.c
+
+v2.6.28.6-samsung-r2d14: Jongpill Lee
+	- Support reboot command
+
+	Modified Files:
+		M       arch/arm/mach-s3c6400/include/mach/system.h
+		M       arch/arm/mach-s5p6440/include/mach/system.h
+		M       arch/arm/plat-s3c/include/plat/regs-watchdog.h
+
+v2.6.28.6-samsung-r2d15: Jaeryul Oh
+	- MFC memory buffer size is changed
+	Modified Files :
+		M       drivers/media/video/samsung/mfc10/s3c_mfc_config.h
+
+v2.6.28.6-samsung-r2d16: Abhilash Kesavan
+	- Support backlight class driver by PWM on SMDKC100
+
+	Added Files:
+		A 	arch/arm/plat-s5pc1xx/pwm.c
+
+	Modified Files:
+		M   	arch/arm/mach-s5pc100/cpu.c
+		M   	arch/arm/mach-s5pc100/mach-smdkc100.c
+		M   	arch/arm/plat-s5pc1xx/Kconfig
+		M   	arch/arm/plat-s5pc1xx/Makefile
+		M	arch/arm/plat-s3c/include/plat/clock.h
+		M	drivers/video/samsung/s3cfb_fimd5x.c
+		M	drivers/video/backlight/Kconfig
+
+v2.6.28.6-samsung-r2d17: Kyoungil Kim
+	- Modified full speed configuration for gadget
+
+	Modified Files:
+		M       arch/arm/mach-s5p6440/mach-smdk6440.c
+		M       drivers/usb/gadget/s3c_udc_otg.c
+		M       drivers/usb/gadget/s3c_udc_otg_xfer_dma.c
+
+v2.6.28.6-samsung-r3: Kyoungil Kim
+	- Official Release for SMDK6410(09.04.23)
+
+v2.6.28.6-samsung-r3d0: Kyoungil Kim
+
+v2.6.28.6-samsung-r3d1: Jaeryul Oh
+	- Clk name that MFC & JPEG (6410) uses is added
+	Modified Files :
+		M       arch/arm/plat-s3c64xx/clock.c
+		M       drivers/media/video/samsung/jpeg/s3c-jpeg.c
+		M       drivers/media/video/samsung/mfc10/s3c_mfc.c
+
+v2.6.28.6-samsung-r3d2: Jae-Cheol Lee
+	- Fixed APM bug on SMDKC100
+	Modified Files:
+		M	arch/arm/plat-s5pc1xx/pm.c
+		M	arch/arm/plat-s5pc1xx/sleep.S
+		M	arch/arm/plat-s5pc1xx/s5pc1xx-time.c
+		M	arch/arm/plat-s5pc1xx/include/plat/regs-clock.h
+		M	arch/arm/plat-s5pc1xx/include/plat/regs-gpio.h
+
+v2.6.28.6-samsung-r3d3: Thomas Abraham
+	- Added PM support for USB device on C100.
+	Modified Files:
+		M	drivers/usb/gadget/s3c_udc_otg.c
+		M	drivers/usb/gadget/file_storage.c
+
+v2.6.28.6-samsung-r3d4: Jinsung Yang
+	- S5P6440 Post Processor Support
+	- Just compilable version
+
+	Added files:
+		A       arch/arm/plat-s5p64xx/bootmem.c
+		A       arch/arm/plat-s5p64xx/dev-post.c
+		A       arch/arm/plat-s5p64xx/include/plat/media.h
+		A       arch/arm/plat-s5p64xx/include/plat/post.h
+		A       arch/arm/plat-s5p64xx/include/plat/regs-post.h
+		A       arch/arm/plat-s5p64xx/include/plat/regs-pp.h
+		A       arch/arm/plat-s5p64xx/setup-post.c
+		A       drivers/media/video/samsung/post/s3c_post.h
+		A       drivers/media/video/samsung/post/s3c_post_cfg.c
+		A       drivers/media/video/samsung/post/s3c_post_core.c
+		A       drivers/media/video/samsung/post/s3c_post_regs.c
+		A       drivers/media/video/samsung/post/s3c_post_v4l2.c
+	
+	Modified files:
+		M       arch/arm/mach-s5p6440/include/mach/map.h
+		M       arch/arm/plat-s5p64xx/Makefile
+		M       arch/arm/plat-s5p64xx/clock.c
+		M       drivers/media/video/samsung/Kconfig
+		M       drivers/media/video/samsung/post/Kconfig
+		M       drivers/media/video/samsung/post/Makefile
+
+v2.6.28.6-samsung-r3d5: Thomas Abraham
+        - Fixed PM bug in USB gadget.
+	Modified Files:
+	        M       drivers/usb/gadget/s3c_udc_otg.c
+	
+v2.6.28.6-samsung-r3d6: Abhilash Kesavan
+	- Added PM defconfig (Base), Onenand Platform and Misc PM Fixes
+	Modified Files: 
+	M	drivers/mtd/onenand/generic.c
+	M	drivers/mtd/onenand/s3c_onenand.c
+	M	drivers/media/video/samsung/g3d/s3c_fimg3d.c
+	M	sound/soc/codecs/wm9713.c
+
+	Added File:
+	A	arch/arm/configs/smdkc100pm_defconfig
+
+v2.6.28.6-samsung-r3d7: Jongpill Lee
+	- ADC bug fixed on SMDK6440
+
+	Modified Files:
+		
+		M arch/arm/plat-s5p64xx/adc.c
+
+v2.6.28.6-samsung-r3d8: Jae-Cheol Lee
+	- Support DFS on SMDK6440
+	Modified Files:
+		M 	arch/arm/plat-s5p64xx/clock.c
+
+v2.6.28.6-samsung-r3d9: SungJun Bae 
+	- merged with mfc branch v2.6.28.6-samsung-mfc-r0d0 
+
+v2.6.28.6-samsung-r3d10: Jongpill Lee
+	- Bug fixed on APM driver for S3C6410
+
+	MOdified Files:
+		M arch/arm/plat-s3c64xx/sleep.S
+
+v2.6.28.6-samsung-r4: Kyoungil Kim
+	- Official Release for SMDK6410, 6440, C100(09.04.30)
+
+v2.6.28.6-samsung-r4d0: Kyoungil Kim
+
+v2.6.28.6-samsung-r4d1: Jassi
+	- Addded SPI driver support for S3C6410 and S5P6440 acc to latest
+	Linux-SPI architecture
+
+v2.6.28.6-samsung-r5: Kyoungil Kim
+	- Official Release for SMDK6410, 6440, C100(09.04.30)
+
+v2.6.28.6-samsung-v1: Kyoungil Kim
+
+v2.6.28.6-samsung-r5d0: Kyoungil Kim
+
+v2.6.28.6-samsung-r5d1: Bhushan
+	- Adding support for Uart Dma Tx and Rx
+
+	Modified Files:
+	        M arch/arm/mach-s5pc100/dma.c
+	        M arch/arm/plat-s5pc1xx/dev-uart.c
+	        M drivers/serial/Kconfig
+	        M drivers/serial/samsung.c
+	        M drivers/serial/samsung.h
+
+	Added File:
+	        A arch/arm/configs/smdkc100uart_dma_defconfig
+
+v2.6.28.6-samsung-r5d2: Abhilash Kesavan
+	- Adding support for ethernet up/down
+
+	Modified Files:
+		M       driver/net/smc911x.c
+
+v2.6.28.6-samsung-r5d3: Kyoungil Kim
+	- Prevent for SMDK6440
+
+v2.6.28.6-samsung-r5d4: Kukjin Kim
+	- Modified files for DMA request_irq
+
+	Modified Files:
+		M arch/arm/plat-s3c/dma-pl330.c
+		M arch/arm/plat-s3c/dma-pl330-mcode.h
+
+v2.6.28.6-samsung-r5d5: Kyoungil Kim
+	- Second Prevent for SMDK6440
+
+v2.6.28.6-samsung-r5d6: Jonghun Han
+	- S3C6410 Renderer pipeline Support
+	- Just compilable version
+
+	Added files:
+		A       arch/arm/plat-s3c64xx/dev-rp.c
+		A       drivers/media/video/samsung/rp/Kconfig
+		A       drivers/media/video/samsung/rp/Makefile
+		A       drivers/media/video/samsung/rp/s3c_rp.h
+		A       drivers/media/video/samsung/rp/s3c_rp_cfg.c
+		A       drivers/media/video/samsung/rp/s3c_rp_core.c
+		A       drivers/media/video/samsung/rp/s3c_rp_pp_regs.c
+		A       drivers/media/video/samsung/rp/s3c_rp_rot_regs.c
+		A       drivers/media/video/samsung/rp/s3c_rp_v4l2.c
+	
+	Modified files:
+		M       arch/arm/mach-s3c6410/mach-smdk6410.c
+		M       arch/arm/plat-s3c64xx/Makefile
+		M       arch/arm/plat-s3c64xx/Kconfig
+		M       arch/arm/plat-s3c64xx/bootmem.c
+		M       arch/arm/plat-s3c64xx/clock.c
+		M       arch/arm/plat-s3c64xx/include/plat/media.h
+		M       arch/arm/plat-s3c/include/plat/regs-pp.h
+		M       arch/arm/plat-s3c/include/plat/regs-lcd.h
+		M       arch/arm/plat-s3c/include/plat/regs-rotator.h
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       drivers/media/video/samsung/rotator/s3c_rotator.c
+		M       drivers/video/samsung/s3cfb.c
+
+v2.6.28.6-samsung-r5d7: Kukjin Kim
+	- Bug Fixed for DMA
+
+	Modified Files:
+		M arch/arm/plat-s3c/dma-pl080.c
+		M arch/arm/plat-s3c/dma-pl330.c
+
+v2.6.28.6-samsung-r5d8: Kukjin Kim
+	- Bug Fixed again for DMA
+
+	Modified Files:
+		M arch/arm/plat-s3c/dma-pl080.c
+		M arch/arm/plat-s3c/dma-pl330.c
+
+v2.6.28.6-samsung-r5d9: Byungjae Lee
+	- Implemented USB OTG Host role for Card Reader
+
+	Modified Files:
+		M	drivers/usb/host/s3c-otg/s3c-otg-common-regdef.h
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-debug.h
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-hcd.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-oci.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-transferchecker-bulk.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-transferchecker-common.c
+
+v2.6.28.6-samsung-r5d10: Jongpill Lee
+	- bug fixed on Serial Driver
+
+	Modified files:
+		M	drivers/serial/samsung.c
+
+v2.6.28.6-samsung-r6: Kyoungil Kim
+	- Official Release for SMDKC100(09.05.12)
+
+v2.6.28.6-samsung-r6d0: Kyoungil Kim
+
+v2.6.28.6-samsung-r6d1: Jongpill Lee
+	- Fixed partition info and serial bug fixed
+
+	Added Files:
+		A       arch/arm/configs/smdk6440mtd_defconfig
+
+	Modified Files:
+		M       arch/arm/plat-s3c/include/plat/partition.h
+		M       arch/arm/plat-s3c/include/plat/regs-serial.h
+
+v2.6.28.6-samsung-r6d2: Jinsung Yang
+	- s3cfb version 2
+	- phase 1 completed
+
+v2.6.28.6-samsung-r6d3: Jae-Cheol Lee
+	- Starting SMDKC110 developement
+
+	Added Files:
+		A 	arch/arm/mach-s5pc110/Kconfig
+		A 	arch/arm/mach-s5pc110/Makefile
+		A 	arch/arm/mach-s5pc110/Makefile.boot
+		A 	arch/arm/mach-s5pc110/cpu.c
+		A 	arch/arm/mach-s5pc110/dma.c
+		A 	arch/arm/mach-s5pc110/leds-s5pc110.c
+		A 	arch/arm/mach-s5pc110/leds.c
+		A 	arch/arm/mach-s5pc110/leds.h
+		A 	arch/arm/mach-s5pc110/mach-smdkc110.c
+		A 	arch/arm/mach-s5pc110/pm.c
+		A 	arch/arm/mach-s5pc110/setup-sdhci.c
+		A	arch/arm/plat-s5pc1xx/include/plat/s5pc110.h
+		A 	arch/arm/plat-s5pc1xx/s5pc110-clock.c
+		A 	arch/arm/plat-s5pc1xx/s5pc110-init.c
+		A   	arch/arm/configs/smdkc110ramdisk_defconfig
+
+	Modified Files:
+		M   	arch/arm/Kconfig
+		M   	arch/arm/Makefile
+		M   	arch/arm/mach-s5pc100/cpu.c
+		M   	arch/arm/mach-s5pc100/include/mach/map.h
+		M   	arch/arm/plat-s3c/clock.c
+		M   	arch/arm/plat-s3c/include/mach/s3c-dma.h
+		M   	arch/arm/plat-s3c/include/plat/clock.h
+		M   	arch/arm/plat-s3c/include/plat/cpu.h
+		M   	arch/arm/plat-s3c/include/plat/regs-lcd.h
+		M   	arch/arm/plat-s3c/include/plat/regs-serial.h
+		M   	arch/arm/plat-s5pc1xx/Kconfig
+		M   	arch/arm/plat-s5pc1xx/Makefile
+		M   	arch/arm/plat-s5pc1xx/clock.c
+		M   	arch/arm/plat-s5pc1xx/cpu.c
+		M   	arch/arm/plat-s5pc1xx/include/plat/irqs.h
+		M   	arch/arm/plat-s5pc1xx/include/plat/regs-clock.h
+		M   	arch/arm/plat-s5pc1xx/include/plat/regs-sys-timer.h
+		M   	arch/arm/plat-s5pc1xx/include/plat/s5pc100.h
+		M   	arch/arm/plat-s5pc1xx/irq.c
+		M   	arch/arm/plat-s5pc1xx/s5pc1xx-time.c
+		M   	arch/arm/plat-s5pc1xx/setup-csis.c
+		M   	arch/arm/tools/mach-types
+		M   	drivers/serial/Kconfig
+		M   	drivers/video/samsung/s3cfb_fimd5x.c
+
+v2.6.28.6-samsung-r6d4: Jongpill Lee
+        - Modify clock gatinh for S3C6410
+
+        Modified Files:
+                M       arch/arm/plat-s3c64xx/clock.c
+
+v2.6.28.6-samsung-r6d5: Jonghun Han
+	- Added OpenVG driver for S5P6440
+
+	Modified Files:
+		M       arch/arm/mach-s5p6440/include/mach/map.h
+		M       arch/arm/mach-s5p6440/mach-smdk6440.c
+		M       arch/arm/plat-s3c/include/plat/devs.h
+		M       arch/arm/plat-s5p64xx/bootmem.c
+		M       arch/arm/plat-s5p64xx/devs.c
+		M       arch/arm/plat-s5p64xx/include/plat/media.h
+		M       drivers/media/video/samsung/Kconfig
+		M       drivers/media/video/samsung/Makefile
+		A       drivers/media/video/samsung/gvg/Kconfig
+		A       drivers/media/video/samsung/gvg/Makefile
+		A       drivers/media/video/samsung/gvg/s3c_fimgvg.c
+
+v2.6.28.6-samsung-r7: Kyoungil Kim
+	- Official Release for SMDK6440(09.05.15)
+
+v2.6.28.6-samsung-r7d0: Kyoungil Kim
+
+v2.6.28.6-samsung-r7d1: Kyoungil Kim
+	- Support CDC(serial + ethernet) composite device for Linux
+
+	Modified Files:
+		M       arch/arm/plat-s3c/include/plat/regs-otg.h
+		M       drivers/usb/gadget/epautoconf.c
+		M       drivers/usb/gadget/s3c_udc.h
+		M       drivers/usb/gadget/s3c_udc_otg.c
+
+v2.6.28.6-samsung-r7d2: Jinsung Yang
+	- s3cfb version 2 support (6410/6440/c100)
+	- alpha release
+
+v2.6.28.6-samsung-r7d3: Jae-Cheol Lee
+	- Add GPIO definition for S5PC110/S5PC100
+
+v2.6.28.6-samsung-r7d4: Jongpill lee
+	- Modify uart code for S5PC110
+	Modified Files:
+		M       arch/arm/mach-s5pc110/mach-smdkc110.c
+		M       arch/arm/plat-s3c/include/plat/regs-serial.h
+		M       drivers/serial/samsung.c
+
+v2.6.28.6-samsung-r8: Kyoungil Kim
+	- 2nd SQA for SMDK6440(09.05.20)
+
+v2.6.28.6-samsung-r8d0: Jae-Cheol Lee
+	- Modify IRQ definition for S5PC110
+	Modified Files:
+		M	arch/arm/plat-s5pc1xx/irq-eint.c
+		M	arch/arm/plat-s5pc1xx/include/plat/irqs.h
+
+v2.6.28.6-samsung-r8d1: Jongpill Lee
+	- Support SROMC for S5PC110
+	Added Files:
+		A       arch/arm/configs/smdkc110nfs_defconfig
+	
+	Modified Files:
+		M       arch/arm/mach-s5pc110/mach-smdkc110.c
+		M       drivers/net/smc911x.c
+		M       drivers/net/smc911x.h
+
+v2.6.28.6-samsung-r8d2: Jongpill Lee
+	- Bug fix on Ethernet Driver
+
+	Modified Files:
+		M       arch/arm/configs/smdkc110ramdisk_defconfig
+		M       arch/arm/mach-s5pc110/mach-smdkc110.c
+		M       arch/arm/plat-s5pc1xx/devs.c
+		M       arch/arm/plat-s5pc1xx/include/plat/irqs.h
+		M       arch/arm/plat-s5pc1xx/irq-eint.c
+
+v2.6.28.6-samsung-r8d4: Jonghun Han
+	- Added FIMG-2D driver for S5P6440
+
+	Modified Files:
+		M       arch/arm/mach-s5p6440/include/mach/map.h
+		M       arch/arm/mach-s5p6440/mach-smdk6440.c
+		M       arch/arm/plat-s5p64xx/devs.c
+		M       drivers/media/video/samsung/g2d/s3c_fimg2d2x.c
+	
+v2.6.28.6-samsung-r8d5: Jae-Cheol Lee
+	- Add DVFS level with IEM controll in S5PC100
+
+	Modified Files:
+		M 	arch/arm/mach-s5pc100/include/mach/map.h
+		M 	arch/arm/plat-s3c/include/plat/cpu-freq.h
+		M 	arch/arm/plat-s5pc1xx/cpu.c
+		M 	arch/arm/plat-s5pc1xx/include/plat/pll.h
+		M 	arch/arm/plat-s5pc1xx/include/plat/regs-clock.h
+		M 	arch/arm/plat-s5pc1xx/ltc3714.c
+		M 	arch/arm/plat-s5pc1xx/s5pc100-clock.c
+		M 	arch/arm/plat-s5pc1xx/s5pc1xx-cpufreq.c
+
+v2.6.28.6-samsung-r8d6: Kukjin Kim
+	- Added DMA abort function for DMA(PL080) abnormal stop
+	
+	Added Files:
+		M	arch/arm/plat-s3c/dma-pl080.c
+		M	arch/arm/plat-s3c/include/mach/s3c-dma.h
+		M	arch/arm/mach-s3c2410/include/mach/dma.h
+
+v2.6.28.6-samsung-r9: Kyoungil Kim
+	- 2nd SQA for SMDKC100(09.05.25)
+
+v2.6.28.6-samsung-r9d0: Jae-Cheol Lee
+	- Fix Kconfig bug of PWM device selection
+	
+	Modified Files:
+		M	arch/arm/plat-s3c64xx/Kconfig
+
+v2.6.28.6-samsung-r9d1: Kyoungil Kim
+	- s3cfb version 2 beta release
+
+v2.6.28.6-samsung-r10: Kyoungil Kim
+	- Official Release for SMDK6410(09.05.28)
+
+v2.6.28.6-samsung-r10d0: Kyoungil Kim
+
+v2.6.28.6-samsung-r10d1: Jongpill Lee
+	- Support NFS on SMDKC110
+
+	Modified Files:
+		M       arch/arm/configs/smdkc110nfs_defconfig
+		M       arch/arm/mach-s5pc110/mach-smdkc110.c
+		M       arch/arm/plat-s5p64xx/Kconfig
+		M       arch/arm/plat-s5pc1xx/cpu.c
+		M       arch/arm/plat-s5pc1xx/irq-eint.c
+
+v2.6.28.6-samsung-r10d2: Bhushan
+	- Adding changes in OTG code which are required for wifi.
+	
+	Modified Files:
+		M	drivers/usb/core/message.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-hcd.c
+
+v2.6.28.6-samsung-r10d3: Bhushan
+	- Changes in OTG code to fix the ifconfig up and down instability
+	issue. (May cause issue in HID and device disconnect. This is
+	intermediate version of code.)
+	
+	Modified Files:
+		M	drivers/usb/core/message.c
+		M	drivers/usb/host/s3c-otg/s3c-otg-hcdi-hcd.c
+
+v2.6.28.6-samsung-r11: Kyoungil Kim
+	- Official Release for SMDK6440(09.06.01)
+
+v2.6.28.6-samsung-r11d0: Kyoungil Kim
+
+v2.6.28.6-samsung-r11d1: SungJun Bae 
+	- MFC for Power Management.
+
+	Modified Files:
+		M	drivers/media/video/samsung/mfc40/s3c-mfc.c
+		M	drivers/media/video/samsung/tv/s3c-tvenc.c
+		M	drivers/media/video/samsung/tv20/s5p_tv.h
+
+v2.6.28.6-samsung-r11d2: Jongpill Lee
+	- Modify RTC Driver to use RTC Alarm with year
+
+	Modified Files:
+		M	drivers/rtc/rtc-s3c.c
+
+v2.6.28.6-samsung-r11d3: SungJun Bae 
+	- Grabage play bug fix, Long play bug fix(pl080).
+
+	Modified Files:
+		M	sound/core/pcm_lib.c
+		M	sound/soc/s3c64xx/s3c-pcm.c
+
+v2.6.28.6-samsung-r11d4: Jassi
+	- Added Multi_SlaveSelect support for SPI(6410, 6440 and C100)
+	
+	Added File:
+		A	arch/arm/plat-s3c/include/plat/spi.h
+
+	Modified Files:
+		M	Documentation/spi/spidev_test.c
+		M	arch/arm/mach-s3c6410/mach-smdk6410.c
+		M	arch/arm/mach-s5p6440/mach-smdk6440.c
+		M	arch/arm/mach-s5pc100/mach-smdkc100.c
+		M	arch/arm/plat-s3c/gpio-config.c
+		M	arch/arm/plat-s3c/include/plat/gpio-cfg-helpers.h
+		M	arch/arm/plat-s3c/include/plat/gpio-cfg.h
+		M	arch/arm/plat-s3c64xx/devs.c
+		M	arch/arm/plat-s3c64xx/gpiolib.c
+		M	arch/arm/plat-s5p64xx/devs.c
+		M	arch/arm/plat-s5p64xx/gpiolib.c
+		M	arch/arm/plat-s5pc1xx/devs.c
+		M	arch/arm/plat-s5pc1xx/gpiolib.c
+		M	drivers/spi/spi_sam.c
+		M	drivers/spi/spi_sam.h
+
+v2.6.28.6-samsung-r12: Jongpill Lee
+        - Official Release for SMDK6440(09.06.03)
+
+v2.6.28.6-samsung-r12d0: jongpill Lee
+
+v2.6.28.6-samsung-r12d1: SungJun Bae 
+	- I2S : Garbage removal at the end of playback.
+	Modified Files:
+		M	sound/core/pcm_lib.c
+
+v2.6.28.6-samsung-r12d2: Jinsung Yang
+	- Single Node FIMC Driver (alpha version)
+
+v2.6.28.6-samsung-r12d3: Jinsung Yang
+	- s3cfb version 2
+	- direct ioctl support
+	- fifo open/close optimization
+	- debug messages optimization
+
+v2.6.28.6-samsung-r13: Jinsung Yang
+	- Official Release (09.06.04)
+
+v2.6.28.6-samsung-r13d0: Jinsung Yang
+
+v2.6.28.6-samsung-r13d1: Jaeryul Oh
+	- Added MFC driver on SMDKC110
+
+	Modified Files :
+		M	arch/arm/mach-s5pc100/include/mach/map.h
+		M	arch/arm/mach-s5pc110/mach-smdkc110.c
+		M	arch/arm/plat-s5pc1xx/include/plat/regs-mfc.h
+		M	drivers/media/video/samsung/Kconfig
+		M	drivers/media/video/samsung/Makefile
+
+	Added Files:
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_fw.c
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_memory.c
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_opr.c
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_intr.c
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_common.c
+		A	drivers/media/video/samsung/mfc50/s3c-mfc.c
+		A drivers/media/video/samsung/mfc50/s3c_mfc_buffer_manager.c
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_fw.h
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_errorno.h
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_intr.h
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_logmsg.h
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_types.h
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_opr.h
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_memory.h
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_interface.h
+		A	drivers/media/video/samsung/mfc50/s3c_mfc_common.h
+		A drivers/media/video/samsung/mfc50/s3c_mfc_buffer_manager.h
+
+v2.6.28.6-samsung-r14: Jongpill Lee
+	- Official Release(09.06.08)

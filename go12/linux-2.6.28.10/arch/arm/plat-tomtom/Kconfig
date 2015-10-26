@@ -1,0 +1,59 @@
+
+menu "TomTom Platform options"
+
+config PLAT_MENDOZA
+	bool
+	help
+	  Internal helper for Mendoza carrier board, directly selected
+	  by the usual suspects.
+
+config PLAT_IRVINE
+	bool
+	help
+	  Macros and function that are specific to the Irvine platform.
+
+config TOMTOM_HAVE_SERIAL_BARRACUDA
+	bool
+
+config TOMTOM_HAVE_SPI_BARRACUDA
+	bool
+
+config TOMTOM_HAVE_SERIAL_AR15XX
+	bool
+
+config PLAT_TOMTOM
+	bool "Enable TomTom platforms specific features"
+	default n
+	help
+	  Enable the TomTom platform generic features. If unsure what to say here, 
+	  "No" is a very good choice.
+
+config TOMTOM_FDT
+	bool "Enable fdt (flattened device-tree) use (library, export driver)"
+	depends on PLAT_TOMTOM
+	default y
+	help
+	  Select this option for selecting fdt device-tree parsing
+	  from u-boot. Need u-boot support for it.
+
+config TOMTOM_TT_SETUP
+	bool "Enable the TomTom setup handler"
+	depends on PLAT_TOMTOM
+	default y
+	help
+	  Select this option to enable the TomTom specific tt_setup methods.
+          If CONFIG_TOMTOM_FDT is not available, add ALL tt_setup-registered
+	  platform-devices by default.
+
+config STRICT_DEVMEM
+        bool "Filter access to /dev/mem"
+	default y
+
+config SIGN_ZIMAGE
+	bool "Sign the created zImage using the TomTom DSA key"
+	depends on PLAT_TOMTOM
+	default y
+
+source "drivers/tomtom/Kconfig"
+endmenu
+

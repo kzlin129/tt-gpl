@@ -1,0 +1,8 @@
+#
+# GPU driver configuration
+#
+
+menu GPU
+	depends on HAS_IOMEM
+
+endmenu

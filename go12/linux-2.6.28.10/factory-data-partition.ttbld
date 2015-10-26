@@ -1,0 +1,43 @@
+# factory-data-partition.ttbld
+if [ "${XOPT_KERNEL_WORKSPACE}" != "" ]; then
+	export P4CLIENT="${XOPT_KERNEL_WORKSPACE}"
+fi
+
+get_component_revision
+VERSION="$(make --no-print-directory -s kernelversion)-tt${X_COMPONENT_P4_CHANGELIST}"
+
+do_build() {
+	# build dtc
+	# Use a different dts if specified, and otherwise a default one
+	if [ "x${XOPT_FDT_FLAVOR}" = "x" ]; then
+		DTS_FILE="${X_ARCH}.dts"
+	else
+		DTS_FILE="${X_ARCH}_${XOPT_FDT_FLAVOR}.dts"
+	fi
+	# TODO Use NATIVE_DEPENDS="dtc-tools" and use dtc in staging.
+	if [ "${XOPT_RELEASE}" = "y" ]; then
+
+		# make sure we rub out the serial number and device class
+		../tools/bin/dtc -O dtb -o board.dtb \
+			-s /features/device-serial='' -i /features/device-class=0 \
+			arch/arm/plat-tomtom/dts/${DTS_FILE} \
+			|| die "Unable to generate factorydata from dts!"
+
+		# sign the default fdt with the kernel retail key
+		../tools/bin/sign_image -k keys/tt_kernel_prod_privkey.dsa board.dtb
+	else
+		../tools/bin/dtc -O dtb -o board.dtb -i /features/device-class=0x1 \
+			arch/arm/plat-tomtom/dts/${DTS_FILE} \
+			|| die "Unable to generate factorydata from dts!"
+
+		# for now, sign with a zero box key using the testing factory dev key
+		../tools/bin/sign_image -h 00 -k keys/tt_factory_dev_privkey.dsa board.dtb
+	fi
+
+
+}
+
+do_clean() {
+	rm -Rf board.dtb
+}
+

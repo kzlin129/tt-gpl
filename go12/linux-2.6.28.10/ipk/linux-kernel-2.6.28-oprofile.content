@@ -1,0 +1,12 @@
+file	/vmlinux	vmlinux		 	644 0 0
+file	/zImage		arch/arm/boot/zImage 	644 0 0
+rfile	/		modinst 		644 0 0
+dir	/lib/udev				755 0 0
+dir	/lib/udev/devices			755 0 0
+dir	/lib/udev/devices/input			755 0 0
+dir	/lib/udev/devices/pts			755 0 0
+dir	/lib/udev/devices/shm			1777 0 0
+dir	/lib/udev/devices/snd			1777 0 0
+dir	/lib/udev/devices/usb			755 0 0
+dir	/lib/udev/devices/usb/hid		755 0 0
+dir	/oprofile_tmpfs				755 0 0

@@ -1,0 +1,132 @@
+/dts-v1/;
+
+/ {
+	features {
+		family-name			= "TomTom GO";
+		project-name			= "OTAVALO";
+		model-name			= "GO";
+		hardware-name			= "Otavalo";
+		machine-id			= <2389>;
+		device-serial			= "WB4258G00174";
+		device-type			= "OT";
+		device-class			= <0>;
+		fdt-recovery-key		= <
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		>;
+		fdt-signer-id			= "";
+		text-to-speech			= <1>;
+		handsfree			= <1>;
+		internal-mic			= <1>;
+		voice-recording			= <1>;
+		connect-ext-mic			= <0>;
+		sdcard				= <1>;
+		uart-id				= <2>;
+
+		has-gprs			= <1>;
+		has-bluetooth			= <1>;
+		bluetooth			= "BCM4325";
+		amplifier			= "ALC5627";
+		tft 				= "LMS430";
+	};
+
+	options 
+	{
+		bluetooth 
+		{
+			bt-name 			= "TomTom GO";
+			bt-class 			= <0x000408>;
+			bt-speed 			= <921600>;
+			bt-dev 				= "ttyS1";
+			bt-mac-address 			= "AA:BB:CC:DD:EE:FF";
+			bt-clock 			= <26000000>;
+		};
+
+		battery 
+		{
+			battery-low-warning		= <10>;
+			battery-low-suspend		= <5>;
+			battery-min-resume		= <7>;
+			battery-sw-off-gprs		= <12>;
+			backlight-suspend-level		= <20>;
+		};
+
+		dock 
+		{
+			uart-id				= <32>;
+		};
+
+		file-storage {
+			usb-name			= "TomTom GO 950";
+			luns				= <2>;
+		};
+
+		gprs 
+		{
+			type				= "FARO";			
+			dev				= "ttyS0";
+		};
+
+		gps 
+		{
+			type 				= "GOGPS_BARRACUDA";
+			ephemeris			= <1>;			
+			dev				= "ttyS3";
+			lna				= "ext";
+		};
+
+		usb-ether 
+		{
+			host-mac-address		= "02:04:06:08:0A:0C";
+		};
+
+
+		usbmode 
+		{
+			/* usbmode related , the id of the usbmode driver needs change */
+			bus-id				= <1>; 
+		};
+
+		backlight 
+		{
+			brightness-levels 
+			{
+				mass-storage		= <30>;
+				system-update		= <30>;
+				navcore			= <55>;
+				night-mode		= <30>;
+				screen-calibration	= <55>;
+			};
+		};
+
+		sdcard 
+		{
+			blockdev 			= "mmcblk1";
+			sd-device 			= "/dev/mmcblk1";
+			sys-filter 			= "/block/mmcblk1";
+			sd-name 			= "mmc1";
+			block-stat 			= "/sys/block/mmcblk1/stat";
+		};
+
+		movi 
+		{ 
+			blockdev 			= "mmcblk0";
+			movi-device 			= "/dev/mmcblk0";
+			sys-filter 			= "mmc0";
+			block-stat 			= "/sys/block/mmcblk0/stat";
+		};
+
+	};
+
+	/* list of tomtom methods that need implementing: adding items as devices
+	will cause tt_setup to register the services */
+	devices {
+		tomtom-bcm-gprs-faro2 {};
+		tomtom-bcm-bluetooth-bcm4325 {};
+		tomtom-bcm-touchscreen-resistive {};
+		tomtom-bcm-amplifier-alc5627 {};
+		tomtom-bcm-dock {};
+	};
+};

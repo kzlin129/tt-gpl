@@ -1,0 +1,255 @@
+#
+# Miscellaneous Broadcom device configuration
+#
+
+config BCM_DEBUG_PAUSE
+    bool
+    default n
+
+config BCM_HAVE_PROC_GPIO
+    bool
+    help
+       Platforms select HAVE_PROC_GPIO if they want the /proc/sys/gpio directory to
+       show up.
+
+menu "Broadcom Miscellaneous Devices"
+
+config BCM_LCD_BACKLIGHT
+    bool "LCD Backlight Support"
+    default n
+
+config BCM_HALAUDIO_HOOK
+    bool "HAL Audio Hook Driver"
+    default y
+    ---help---
+    This driver provides a HAL audio hook to work with ALSA and Endpoint.
+
+config BCM_EPTDRIVER_SUPPORT
+    bool "Endpoint Driver Support"
+    default y
+    depends on BCM_HALAUDIO_HOOK
+    ---help---
+    Endpoint Driver kernel support patches, requires network support.
+
+config BCM_HALAUDIO_PLATFORM
+    bool "HAL Audio Platform support"
+    default y
+    ---help---
+    Choose to enable HAL Audio platform support which is required to run HAL Audio.
+    Platform support includes platform specific items such as toggling GPIOs to 
+    enable an external op-amp for a loud speaker. 
+
+choice
+    prompt "External Codec Support"
+    default BCM_HALAUDIO_NOEXTERNAL
+    depends on BCM_HALAUDIO_HOOK
+    ---help---
+    Choose the type of development platform that the kernel is being built for
+
+config BCM_HALAUDIO_NOEXTERNAL
+    bool "No External Codec"
+    ---help---
+    No external codec.
+
+config BCM_HALAUDIO_CUSTOM
+    bool "Custom External Codec"
+    ---help---
+    Custom external codec.
+
+config BCM_HALAUDIO_AK4642
+    bool "AK4642 support"
+    ---help---
+    Reference wideband phone board that supports the AK4642 external codec.
+
+config BCM_HALAUDIO_AK4642_I2C_TEST
+    bool "AK4642 I2C test"
+    depends on BCM_HALAUDIO_AK4642
+    ---help---
+    I2C test using the AK4642 external codec.
+
+config BCM_HALAUDIO_BCM911XXAPMHSS
+    bool "BCM911XXAPMHSS support"
+    depends on MIPS
+    ---help---
+    Selects support for BCM911xx APM and HSS reference boards. An example
+    board that uses this is the BCM91103EVM.
+
+endchoice
+
+config BCM_ADC_DRIVER
+	bool "BCM-bridge ADC Driver"
+	default y
+	---help---
+	This driver provides a generic interface for the 4760 and 59040 ADC drivers.
+
+config BCM4760_ADC_DRIVER
+	bool "BCM4760 ADC Driver"
+	default y
+	---help---
+	This driver provides a low level interface for the 4760 ADC that is used by
+	the BCM_ADC driver.
+
+config BCM_HALAUDIO_MIXER
+    bool "HAL Audio Mixer"
+    default n
+    ---help---
+    This driver provides flexibility to route audio samples to different destination.
+
+config BCM_IODUMP_SUPPORT
+    bool "IO Dump Debugging"
+    default y
+    ---help---
+    IO Dump debugging to capture media packets, PCM data, system logs, etc.
+
+config BCM_PERFCNT_SUPPORT
+    bool "Hardware Performance Counter Support"
+    default y
+    ---help---
+    perfcnt is a simplified hardware performance counter interface for mips32 and arm11 chips.
+
+config BCM_BUS_ARBITER
+    bool "Programmable Bus Arbiter (HPM)"
+    default y
+    ---help---
+    Enable a simple proc/sys interface to program the arm11 HPM.
+
+config BCM_PMU
+    bool "PMU Chip Support"
+    default y
+    ---help---
+    Support for Power Management Chips
+
+config BCM_PMU_BCM59001
+    bool "BCM59001 PMU Support"
+    default n
+    depends on BCM_PMU
+    depends on I2C
+    ---help---
+    Support for the BCM59001 Power Management Chip
+
+config BCM_PMU_BCM59035_B0
+    bool "BCM59035_B0 PMU Support"
+    default n
+    depends on BCM_PMU
+    depends on I2C
+    ---help---
+    Support for the BCM59035_B0 Power Management Chip
+
+config BCM_PMU_BCM59040
+    bool "BCM59040 PMU Support"
+    default n
+    depends on BCM_PMU
+    depends on I2C
+    ---help---
+    Support for the BCM59040 Power Management Chip
+config BCM_PMU_BCM59040_B0
+    bool "BCM59040 B0 PMU Support"
+    default n
+    depends on BCM_PMU_BCM59040
+    ---help---
+    Support for B0 revision of the BCM59040 Power Management Chip. Note that if this option is enabled, A0 revision will not work!
+
+config BCM_PMU_PCF506XX
+    bool "PCF506XX PMU Support"
+    default n
+    depends on BCM_PMU
+    depends on I2C
+    ---help---
+    Support for the PCF50603 and PCF50611 Power Management Chips
+
+config BCM_POWER_MANAGER
+    bool "Power Manager"
+    default y
+    depends on BCM_PMU
+    ---help---
+    Include the Power Manager.
+
+config BCM_BATTERY_MANAGER
+    bool "Battery Manager"
+    default n
+    depends on BCM_POWER_MANAGER
+    ---help---
+    Include the Battery Management portion of Power Manager.
+
+config BCM_VC02
+    bool "VC02 Driver"
+    select BCM_LCD_BACKLIGHT
+    ---help---
+    Say Y if you have a VC02 (VideoCore) attached to the host
+
+config BCM_DEBUG_PAUSE_VC
+    bool "Wait for a keypress during boot - VideoCore"
+    select BCM_DEBUG_PAUSE
+    depends on BCM_VC02
+    help
+      Allows the kernel to pause prior to bootloading the VideoCore processor.
+      This is a convenient place to break in order to load the VideoCore JTAG.
+
+config BCM_VC03
+    bool "VC03 Driver"
+    ---help---
+    Say Y if you have a VC03 VideoCore3 attached to the host
+
+config BCM_VC03B0
+    bool "VC03B0 Driver"
+    ---help---
+    Say Y if you have a VC03B0 VideoCore3 attached to the host
+
+config BCM_VIDEOCORE_TARGET
+    string "VC02 VideoCore Target"
+    default ""
+    depends on BCM_VC02
+    ---help---
+    Select VC02 VideoCore Target.
+
+config BCM_LCD_PERF
+    bool "Display CPU stats on bottom of LCD"
+    ---help---
+    Say Y to cause the bottom two scan lines of the LCD to be used for displaying
+    a CPU performance meter.
+
+config BCM_IDLE_PROFILER_SUPPORT
+    bool "Enable idle cycles profiling"
+    depends on ARCH_BCM116X || BROADCOM_BCM1103 || ARCH_BCMRING
+    default y
+    help
+      Maintain a counter of ticks spent in idle state.
+
+config BCM_SLEEP_MODE
+    bool "Sleep Mode Control"
+    depends on ARCH_BCM116X
+    ---help---
+    Include the Sleep Mode Control
+
+config BCM_RELTIME
+    bool "RelTime Driver"
+    ---help---
+    This driver provides a relative timestamp based on the jiffie counter.
+    select LCD_API
+
+config BCM_OTP
+    tristate "OTP Driver"
+    ---help---
+    This driver provides access to the One-Time Programmable (OTP) memory.
+
+config BCM_GPIO_DRIVER
+     tristate "GPIO driver"
+     default y
+     ---help---
+     This driver allows user mode program to get access to GPIO pins.
+
+config BCM_4325_DRIVER
+     tristate "BCM4325 Initialization Driver"
+     default n
+     ---help---
+     This sets up the GPIOs for Wireless LAN and Bluetooth in BCM4325.
+
+config BCM_DD
+     tristate "BCM Display Director Driver"
+     default n
+     ---help---
+     Say Y to enable the BCM Display Director driver 
+
+source "drivers/char/broadcom/userdma/Kconfig"
+
+endmenu

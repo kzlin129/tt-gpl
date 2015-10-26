@@ -1,0 +1,12 @@
+Package: linux-kernel-2.6.28-dev
+Priority: required
+Version: IPK_VERSION
+Architecture: IPK_ARCH
+Maintainer: support.tomtom.com
+Section: devel
+Source: IPK_SOURCE
+Depends:
+Provides: linux-kernel-dev
+Description: Linux kernel 2.6.28 header files and map file.
+License: GPLv2
+Action: UA

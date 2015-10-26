@@ -1,0 +1,48 @@
+menuconfig PMU_DEVICE
+	bool "Power Management Devices"
+	default n
+	help
+	  Generic Power Management Unit Support.
+	  
+	  This framework is designed to provide generic support for Power
+	  Management Devices. Typical PMUs consist of components such
+	  as LDOs, regulators, Real-time Clocks, GPIOs, battery and
+	  battery charger control and status, and potentially many
+	  other components.
+	  
+	  Generally systems only have a single PMU but more complex
+	  system configurations may include multiple PMUs. The framework
+	  is designed to support single and multiple PMU system architectures
+	  ultimately.
+
+if PMU_DEVICE
+
+config PMU_DEVICE_BCM59040
+	bool "Broadcom BCM59040 Power Management Unit"
+	depends on PMU_DEVICE
+	default n
+	help
+	  Add support for Broadcom BCM59040 PMU_DEVICE
+
+config PMU_DEVICE_BCM59040_RTC
+	bool "Broadcom BCM59040 Power Management Unit Real-time Clock"
+	depends on PMU_DEVICE_BCM59040
+	default n
+	help
+	  Add support for Broadcom BCM59040 PMU device's real-time clock.
+
+config PMU_DEVICE_BCM59002
+	bool "Broadcom BCM59002 Power Management Unit"
+	depends on PMU_DEVICE
+	default n
+	help
+	  Add support for Broadcom BCM59002 PMU_DEVICE
+
+config PMU_DEVICE_BCM59002_RTC
+	bool "Broadcom BCM59002 Power Management Unit Real-time Clock"
+	depends on PMU_DEVICE_BCM59002
+	default n
+	help
+	  Add support for Broadcom BCM59002 PMU device's real-time clock.
+
+endif

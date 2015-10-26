@@ -1,0 +1,4 @@
+scsi_mod.ko
+scsi_mod.mod.c
+sd_mod.ko
+sd_mod.mod.c

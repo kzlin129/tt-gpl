@@ -1,0 +1,18 @@
+file	/zImage		arch/arm/boot/zImage	 	644 0 0
+file	/zImage.debug	arch/arm/boot/zImage.debug 	644 0 0
+
+if [ "${XOPT_RELEASE}" = "y" ]; then
+file	/zImage.retail	arch/arm/boot/zImage.retail 	644 0 0
+fi
+
+rfile	/		modinst 		644 0 0
+dir	/lib/udev				755 0 0
+dir	/lib/udev/devices			755 0 0
+dir	/lib/udev/devices/input			755 0 0
+dir	/lib/udev/devices/pts			755 0 0
+dir	/lib/udev/devices/shm			1777 0 0
+dir	/lib/udev/devices/snd			1777 0 0
+dir	/lib/udev/devices/usb			755 0 0
+dir	/lib/udev/devices/usb/hid		755 0 0
+dir	/etc 755 0 0
+file	/etc/tomtom.ver		tomtom.ver	644 0 0

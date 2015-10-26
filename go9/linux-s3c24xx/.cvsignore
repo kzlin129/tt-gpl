@@ -1,0 +1,12 @@
+.config
+.tags
+.tmp_*
+.version
+Module.symvers
+System.map
+buildkernel.sh
+diffs
+dim*.config
+dord.sh
+localversion
+vmlinux

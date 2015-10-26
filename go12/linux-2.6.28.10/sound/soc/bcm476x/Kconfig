@@ -1,0 +1,37 @@
+# ALSA SND-SOC BCM476X drivers
+
+config SND_BCM476X_SOC
+	tristate "Broadcom Sound Driver BCM476X"
+	depends on SND && PLAT_BCM476X
+	select SND_PCM
+	help
+	  Say Y or M if you want to add support for codecs attached to
+	  the BCM476X or I2S interfaces. You will also need to
+	  select the audio interfaces to support below.
+	  
+config SND_BCM476X_SOC_I2S
+	tristate
+
+config SND_BCM476X_SOC_INTERNAL
+	tristate "Internal bcm476x sound support"
+    depends on SND_BCM476X_SOC	
+	select SND_SOC_BCM476X
+	
+config SND_BCM476X_SOC_EXTERNAL
+	tristate
+	
+config SND_BCM476X_SOC_EXT_WM8750
+    tristate "External WM8750 support"
+    depends on SND_BCM476X_SOC
+	select SND_SOC_WM8750
+	select SND_BCM476X_SOC_I2S
+	select SND_BCM476X_SOC_EXTERNAL
+
+config SND_BCM476X_SOC_EXT_RT5627
+    tristate "External RT5627 support"
+    depends on SND_BCM476X_SOC    
+	select SND_SOC_RT5627
+	select SND_BCM476X_SOC_I2S
+	select SND_BCM476X_SOC_EXTERNAL
+    
+	

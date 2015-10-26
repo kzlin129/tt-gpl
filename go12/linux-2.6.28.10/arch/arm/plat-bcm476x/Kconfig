@@ -1,0 +1,4 @@
+config PLAT_BCM476X
+	bool
+	help
+		blah blah

@@ -1,0 +1,13 @@
+dir	    /partitions                         755 0 0
+file	/System.map			System.map      644 0 0
+file    /vmlinux            vmlinux         644 0 0
+file	/partitions/linux-kernel.ver	tomtom.ver		644 0 0	
+rfile	/include			include 		-   - -
+dir	/include/asm/plat-tomtom				755 0 0
+file	/include/asm/plat-tomtom	arch/arm/plat-tomtom/include/plat/gps_types.h	644 0 0
+dir	/keys							750 0 0
+file	/keys		keys/tt_rootfs_dev_privkey.dsa		640 0 0
+if [ "${XOPT_RELEASE}" = "y" ]; then
+file	/keys		../production_keys/tt_rootfs_prod_pubkey.dsa		640 0 0
+file	/keys		../production_keys/tt_rootfs_prod_privkey.dsa.gpg	640 0 0
+fi

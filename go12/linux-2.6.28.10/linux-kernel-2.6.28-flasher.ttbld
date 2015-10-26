@@ -1,0 +1,3 @@
+# linux-kernel-xxx.ttbld
+IOPT_FLASHER="y"
+. linux-kernel-2.6.28.ttbld

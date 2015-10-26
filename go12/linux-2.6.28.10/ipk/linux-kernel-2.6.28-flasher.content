@@ -1,0 +1,5 @@
+file	/zImage.flasher		arch/arm/boot/zImage 	644 0 0
+
+if [ "${XOPT_RELEASE}" = "y" ]; then
+file	/zImage.flasher.retail	arch/arm/boot/zImage.retail 	644 0 0
+fi

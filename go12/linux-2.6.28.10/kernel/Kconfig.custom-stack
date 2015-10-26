@@ -1,0 +1,25 @@
+config CUSTOM_STACK
+	bool "Enable custom stack sizes"
+	depends on BROADCOM_BCM1103
+	default n
+	help
+	  If you say Y here, then custom stack sizes will be enabled.
+
+config CUSTOM_STACK_DEFAULT_ORDER
+    int "Default stack size order"
+    depends on CUSTOM_STACK
+    default 1
+    help
+        This sets the "order" of the default stack size. The default stack size will
+        be PAGE_SIZE << order. A value of 1 with 4k pages equates to 8k stack.
+        
+config CUSTOM_STACK_BIG_ORDER
+    int "Big stack size order"
+    depends on CUSTOM_STACK
+    default 2
+    help
+        This sets the "order" of the big stack size. The big stack size will
+        be PAGE_SIZE << order. A value of 2 with 4k pages equates to a 16k big stack.
+        Threads created with the CLONE_BIG_STACK flag will get a stack using
+        this stack size.
+

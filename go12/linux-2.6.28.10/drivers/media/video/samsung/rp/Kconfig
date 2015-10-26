@@ -1,0 +1,15 @@
+#
+# Configuration for renderer pipeline
+#
+
+config VIDEO_RP
+	bool "Samsung Renderer pipeline Driver" 
+	depends on VIDEO_SAMSUNG && (VIDEO_ROTATOR != y) && (VIDEO_POST != y) && (CPU_S3C6410)
+	default n
+	---help---
+	  This is a Renderer pipeline for Samsung S3C6410.
+
+config VIDEO_RP_DEBUG
+        bool "Samsung Renderer pipeline driver debug messages"
+        depends on VIDEO_RP
+	  

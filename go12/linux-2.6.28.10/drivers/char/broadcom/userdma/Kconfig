@@ -1,0 +1,13 @@
+config BCM_USERDMA
+	 depends on HAS_DMA
+     tristate "userdma driver"
+     default y
+     ---help---
+     This driver allows user mode program to get access to hardware DMA.
+    
+config BCM476X_USERDMA
+	bool "BCM476X user dma driver"
+	depends on BCM_USERDMA && PLAT_BCM476X
+	default y	
+	help
+	  Broadcom BCM476X user dma interface.

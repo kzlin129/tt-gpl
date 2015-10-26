@@ -1,0 +1,27 @@
+To create the clut224.ppm file necessary for the logo, you need to install the netpbm 
+utility suite (either under cygwin or linux).
+
+You can then do something like the following to convert a PNG file into a CLUT file:
+
+pngtopnm logo.png | pnmtoplainpnm > logo_linux_clut224.ppm
+
+If the original image has more than 224 colors, then you may need to use one of the following
+techniques to quantize the image:
+
+pngtopnm logo.png | ppmquant -fs 223 | pnmtoplainpnm > logo_linux_clut224.ppm
+
+ppmquant uses a dithering technique to create the intermediary colors.
+
+Alternatively you can use the convert utility that comes with ImageMagick:
+
+convert -colors 224 src.png dest.png
+
+This will reduce the colorspace and not do any dithering. Which technique looks better
+will depend largely on the content.
+
+You can either overwrite one of the linux logo filenames (see the Makefile in drivers/video/logo)
+or edit the Makefile to add a new entry and add a new entry for a new file.
+
+This web page discusses several techniques for using a customized logo:
+http://www.gentoo-wiki.info/HOWTO_Linux_Logo_Hack
+

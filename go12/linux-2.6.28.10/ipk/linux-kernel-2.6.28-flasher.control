@@ -1,0 +1,12 @@
+Package: linux-kernel-2.6.28-flasher
+Priority: required
+Version: IPK_VERSION
+Architecture: IPK_ARCH
+Maintainer: support.tomtom.com
+Section: base
+Source: IPK_SOURCE
+Depends:
+Provides: linux-kernel-flasher
+Description: Linux kernel 2.6.28 flasher.
+License: GPLv2
+Action: UA

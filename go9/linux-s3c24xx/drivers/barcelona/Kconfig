@@ -1,0 +1,129 @@
+# drivers/barcelona/Kconfig
+# 
+# Menuconfig script for Barcelona device configuration.
+#
+# Copyright (C) 2004,2005 TomTom BV <http://www.tomtom.com/>
+# Author: Dimitry Andric <dimitry.andric@tomtom.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as
+# published by the Free Software Foundation.
+
+if MACH_TOMTOMGO
+
+config BARCELONA_ADC
+	tristate "ADC driver"
+
+config BARCELONA_ACC
+	tristate "(OLD) Accelerometer driver"
+	depends on BARCELONA_ADC
+	
+config BARCELONA_DOCK
+	tristate "Barcelona/Liverpool dock driver"
+	depends on I2C
+
+config GPRS_INTERFACE
+	tristate "GPRS interface for Knock/Murcia"
+ 
+config BARCELONA_GACC_SMB365
+	tristate "Bosch SMB365 Accelerometer driver"
+	depends on SPI_MASTER && ARCH_S3C2410
+
+config BARCELONA_GACC_KXP74
+	tristate "Kionix KX74 series Accelerometer driver"
+	depends on SPI_MASTER && ARCH_S3C2410
+
+config BARCELONA_GYRO_FUJITSU
+	tristate "Fujitsu Gyro device driver"
+	depends on BARCELONA_ADC
+
+config BARCELONA_GYRO_ING300
+	tristate "InvenSense ING 300 gyro device driver"
+	depends on BARCELONA_ADC
+
+config BARCELONA_GADC
+	tristate "New generic ADC interface (replaces BARCELONA_GYRO_FUJITSU and BARCELONA_GYRO_ING300)"
+	depends on BARCELONA_ADC
+
+config BARCELONA_BARO
+	tristate "Barometer driver"
+	depends on BARCELONA_GADC
+
+config BARCELONA_GADC_KXR94
+	tristate "KXR94 Accelerometer GADC driver"
+	depends on BARCELONA_GADC
+
+config BARCELONA_BAT
+	tristate "Battery driver"
+	depends on BARCELONA_ADC && BARCELONA_USBMODE
+
+config BARCELONA_TS
+	tristate "Touch screen driver"
+	depends on BARCELONA_ADC
+
+config BARCELONA_TSINPUT
+	tristate "Touch screen input driver"
+	depends on BARCELONA_ADC
+
+config BARCELONA_BUSPOWER
+	tristate "bus power driver"
+
+config BARCELONA_GPIO
+	tristate "GPIO driver"
+	depends on BARCELONA_ADC && BARCELONA_BUSPOWER
+
+config BARCELONA_GPS
+	tristate "GPS driver"
+
+config BARCELONA_HW
+	tristate "Hardware detection driver"
+
+config BARCELONA_USBMODE
+	tristate "Legacy USB mode detect and set"
+
+config BARCELONA_USBMODE_S3C24XX
+        depends on BARCELONA_USBMODE && ARCH_S3C2410 && BARCELONA_BUSPOWER
+        tristate "Legacy USB mode detect and set s3c24xx implementation"
+
+config BARCELONA_PWM
+	tristate "PWM (LCD backlight) driver"
+	depends on BARCELONA_ADC
+
+config BARCELONA_SOUND
+	tristate "Sound driver"
+	depends on BARCELONA_GPIO
+
+config BARCELONA_SOUND_FILTER
+	depends on BARCELONA_SOUND
+	tristate "Sound driver filter API"
+
+config BARCELONA_SOUND_ALC5628
+	depends on I2C
+	tristate "Realtek ALC5628 audio codec (I2C)"
+
+config BARCELONA_RC
+	tristate "Remote control"
+
+config BARCELONA_BUZ
+	tristate "Buzzer driver"
+
+config BARCELONA_LTC3455
+	tristate "LTC3455 PMIC Driver"
+	help
+	  Implementation for the LTC3455 PMIC IC, using GPIO to control states. This
+	  is currently only implemented on Milan and deratives.
+	  Just say Y.
+
+config BARCELONA_EXTERNAL_UART
+	tristate "Support external UART"
+	select SERIAL_8250
+	help
+	  Some GO versions have an extra 8250/16550 compatible UART beside the ones on the SOC. 
+	  Say Y here if you want support for it.
+
+config BARCELONA_SOCSRAM
+	tristate "S3C24XX 4KB SRAM support"
+
+endif # MACH_TOMTOMGO
+
+# EOF

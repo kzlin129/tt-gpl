@@ -1,0 +1,42 @@
+config CPUISOL
+	depends on SMP
+	bool "CPU isolation"
+	help
+	  This option enables support for CPU isolation. If enabled the
+	  kernel will try to avoid kernel activity on the isolated CPUs.
+	  By default user-space threads are not scheduled on the isolated
+	  CPUs unless they explicitly request it via sched_setaffinity()
+	  and pthread_setaffinity_np() calls. Isolated CPUs are not
+	  subject to the scheduler load-balancing algorithms.
+
+	  This feature is useful for hard realtime and high performance
+	  applications.
+	  See Documentation/cpu-isolation.txt for more details.
+
+	  If unsure say 'N'.
+
+config CPUISOL_WORKQUEUE
+	bool "Do not schedule workqueues on the isolated CPUs (EXPERIMENTAL)"
+	depends on CPUISOL && EXPERIMENTAL
+	help
+	  If this option is enabled kernel will not schedule workqueues on
+	  the isolated CPUs.  Please note that at this point this feature
+	  is experimental. It breaks certain things like OProfile that
+	  heavily rely on per cpu workqueues.
+
+	  Say 'Y' to enable workqueue isolation.  If unsure say 'N'.
+
+config CPUISOL_STOPMACHINE
+	bool "Do not halt isolated CPUs with Stop Machine (EXPERIMENTAL)"
+	depends on CPUISOL && STOP_MACHINE && EXPERIMENTAL
+	help
+	  If this option is enabled kernel will not halt isolated CPUs
+	  when Stop Machine is triggered. Stop Machine is currently only
+	  used by the module insertion and removal.
+	  Please note that at this point this feature is experimental. It is 
+	  not known to really break anything but can potentially introduce
+	  an instability due to race conditions in module removal logic.
+
+	  Say 'Y' if support for dynamic module insertion and removal is
+	  required for the system that uses isolated CPUs. 
+	  If unsure say 'N'.

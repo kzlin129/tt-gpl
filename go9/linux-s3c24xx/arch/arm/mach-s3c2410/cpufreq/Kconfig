@@ -1,0 +1,38 @@
+#
+# CPU Frequency scaling
+#
+
+#menu "CPU Frequency scaling"
+
+if CPU_FREQ && ARCH_S3C2410
+
+comment "CPUFreq processor drivers"
+
+config S3C24XX_DVS_CPUFREQ
+        bool "S3C2450, S3C2443, S3C2412 and S3C2440 DVS CPUFREQ driver"
+        depends on (CPU_S3C2412 || CPU_S3C2440 || CPU_S3C2443 || CPU_S3C2450) && (S3C24XX_DFS_CPUFREQ=n) 
+	default n
+        help
+	  This driver adds a CPUFreq driver which uses the Dynamic
+	  Voltage Scaling feature present on the above mentioned
+	  SOCs. Note that it only has 2 states: Full speed and
+	  CPU Clock = Memory Clock.
+
+	  If in doubt, say YES PLEASE :)
+
+config S3C24XX_DFS_CPUFREQ
+        bool "S2C2450, S3C2443, S3C2412 DFS CPUFREQ driver"
+        depends on (CPU_S3C2412 || CPU_S3C2440 || CPU_S3C2443 || CPU_S3C2450)
+	default n
+        help
+	  This driver adds a CPUFreq driver which uses Dynamic
+	  Frequency Scaling on the above mentioned SOCs.
+	  This supports a range of frequencies, but does not
+	  change only the CPU clock, but MPLL and with it all
+	  derived clocks.
+
+	  If in doubt, say Oh god yes I want, I want :)
+
+endif # CPU_FREQ && ARCH_S3C2410
+
+#endmenu

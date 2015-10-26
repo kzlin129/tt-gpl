@@ -1,0 +1,87 @@
+config ARCH_SUPPORTS_BIG_ENDIAN
+	bool
+	default n
+	depends on PLAT_BCM476X
+
+choice
+	prompt "Processor selection in BCM476x family of devices"
+	depends on PLAT_BCM476X
+	default ARCH_BCM4760
+
+config ARCH_BCM4760
+	bool "BCM4760"
+	
+endchoice
+
+menu "BCM476X Options"
+	depends on PLAT_BCM476X
+
+choice
+	prompt "Sub machine type"
+	default MACH_BCM4760_TOMTOM
+
+config MACH_CATALINA
+	bool "Catalina"
+	select ARCH_BCM4760
+	help
+	  Machine support for the TomTom Irvine
+
+config MACH_BCM4760_TOMTOM
+	bool "TomTom BCM4760 based machines"
+	select ARCH_BCM4760
+	select USB_GADGET_DWC_OTG
+	select GPIO_VGPIO
+	select PLAT_IRVINE
+	help
+	  Machine support for the TomTom Siena
+endchoice
+
+choice
+	prompt "Kernel type"
+	default BCM4760_STD
+
+config BCM4760_STD
+	bool "Standard"
+	
+config BCM4760_FLASHER
+	bool "Flasher"
+	help
+	  Flasher kernel support
+endchoice
+
+config BCM4760_CPUFREQ_DRV
+    bool "CPUFREQ driver"
+    default y
+    depends on PLAT_BCM476X
+
+config BCM4760_GPS_DRIVER
+    bool "Enable driver for GPS Support in BCM4760"
+    default y
+
+config BCM4760_PWM
+	bool "PWM device support"
+	select HAVE_PWM
+	default y
+	help
+	  Support for exporting the PWM timer blocks via the pwm device
+	  system.
+
+endmenu
+
+menu "BCM476X PM Options"
+	depends on PLAT_BCM476X
+
+config BCM4760_PMSTR_BBL4760_WARMSTART
+	bool "Suspend to RAM support via BCM4760 BBL and Warm Start"
+	default y
+
+config BCM4760_PMSTR_BBL4760_LUKEWARMSTART
+	bool "Suspend to RAM support via BCM4760 BBL and Cold Start"
+	default n
+
+config BCM4760_PMSTR_BBL59040_LUKEWARMSTART
+	bool "Suspend to RAM support via BCM59040 BBL and Cold Start"
+	default n
+
+endmenu
+

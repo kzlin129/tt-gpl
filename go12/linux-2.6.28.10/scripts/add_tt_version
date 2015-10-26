@@ -1,0 +1,6 @@
+#!/bin/sh
+
+ver=$( grep TTVER tomtom.ver | awk -F "=" '{ print $2 }' )
+
+echo CONFIG_TOMTOM_VERSION=$ver >> .config
+

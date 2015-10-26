@@ -1,0 +1,123 @@
+/dts-v1/;
+
+/ {
+	features {
+		family-name			= "TomTom GO";
+		project-name			= "TARIFA";
+		model-name			= "GO";
+		hardware-name			= "Siena";
+		machine-id			= <2390>;
+		device-serial			= "KV9415LE00FN";
+		device-type			= "SI";
+		device-class			= <0>;
+		fdt-recovery-key		= <
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		>;
+		fdt-signer-id			= "";
+		text-to-speech			= <1>;
+		handsfree			= <1>;
+		internal-mic			= <1>;
+		voice-recording			= <1>;
+		connect-ext-mic			= <0>;
+		sdcard				= <0>;
+		uart-id				= <2>;
+		has-gprs			= <1>;
+		has-bluetooth			= <1>;
+		tomtomwork			= <1>;
+		bluetooth			= "BCM2070";
+		amplifier			= "ALC5627";
+		ts				= "TMA300E_FW_V2";
+		tft 				= "LMS430";
+	};
+
+	options {
+		bluetooth {
+			bt-name 			= "TomTom GO";
+			bt-class 			= <0x000408>;
+			bt-speed 			= <921600>;
+			bt-dev 				= "ttyS0";
+			bt-mac-address 			= "AA:BB:CC:DD:EE:FF";
+			bt-clock 			= <26000000>;
+
+		};
+
+		battery {
+			battery-low-warning		= <10>;
+			battery-low-suspend		= <3>;
+			battery-min-resume		= <10>;
+			battery-sw-off-gprs		= <1>;
+			battery-sw-on-gprs		= <2>;
+			battery-sw-off-sound		= <37>;
+			battery-sw-on-sound		= <52>;
+			backlight-suspend-level		= <20>;
+		};
+
+		dock {
+			uart-id				= <32>;
+		};
+
+		file-storage {
+			usb-name			= "TomTom GO";
+			luns				= <2>;
+		};
+
+		gprs {
+			antenna-type			= "EU";
+			type				= "FARO";			
+			dev				= "ttyS1";
+		};
+
+		gps {
+			type 				= "GOGPS_BARRACUDA";
+			ephemeris			= <1>;			
+			dev				= "ttyS3";
+		};
+
+		usb-ether 
+		{
+			host-mac-address		= "02:04:06:08:0A:0C";
+		};
+
+
+		usbmode 
+		{
+			/* usbmode related , the id of the usbmode driver needs change */
+			bus-id				= <1>; 
+		};
+
+		backlight 
+		{
+			brightness-levels 
+			{
+				charging		= <33>;	/* When connected to a PC */
+				mass-storage		= <30>;
+				system-update		= <30>;
+				navcore			= <55>;
+				night-mode		= <30>;
+				screen-calibration	= <55>;
+			};
+		};
+
+		movi { 
+			blockdev 	= "mmcblk0";
+			movi-device 	= "/dev/mmcblk0";
+			sys-filter 	= "mmc0";
+			block-stat 	= "/sys/block/mmcblk0/stat";
+		};
+
+	};
+
+	/* list of tomtom methods that need implementing: adding items as devices
+	will cause tt_setup to register the services */
+	devices 
+	{
+		tomtom-bcm-gprs-faro3 {};
+		tomtom-bcm-bluetooth-bcm2070 {};
+		tomtom-bcm-touchscreen-cypress {};
+		tomtom-bcm-amplifier-alc5627 {};
+		tomtom-bcm-dock {};
+	};
+};

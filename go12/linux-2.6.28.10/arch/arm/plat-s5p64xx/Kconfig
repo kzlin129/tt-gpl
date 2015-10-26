@@ -1,0 +1,95 @@
+# arch/arm/plat-s5p64xx/Kconfig
+#
+# Copyright 2008 Openmoko, Inc.
+# Copyright 2008 Simtec Electronics
+#	Ben Dooks <ben@simtec.co.uk>
+#
+# Licensed under GPLv2
+
+config PLAT_S5P64XX
+	bool
+	depends on ARCH_S5P64XX
+	select PLAT_S3C
+	select ARM_VIC
+	default y
+	select NO_IOPORT
+	select ARCH_REQUIRE_GPIOLIB
+	select S3C_GPIO_TRACK
+	select S3C_GPIO_PULL_UPDOWN
+	select S3C_GPIO_CFG_S3C24XX
+	select S3C_GPIO_CFG_S3C64XX
+	help
+	  Base platform code for any Samsung S5P64XX device
+
+if PLAT_S5P64XX
+
+# Configuration options shared by all S5P64XX implementations
+
+config CPU_S5P6440_INIT
+	bool
+	help
+	  Initialisation code for the S5P6440. 
+
+config CPU_S5P6440_CLOCK
+	bool
+	help
+	  Clock support code for the S5P6440.
+
+# platform specific device setup
+
+config S5P64XX_SETUP_I2C0
+	bool
+	default y
+	help
+	  Common setup code for i2c bus 0.
+
+	  Note, currently since i2c0 is always compiled, this setup helper
+	  is always compiled with it.
+
+config S5P64XX_SETUP_I2C1
+	bool
+	help
+	  Common setup code for i2c bus 1.
+
+# FB part
+config S5P64XX_DEV_FB
+	bool
+	depends on FB_S3C_V2
+	default y
+	help
+	  Compile in platform device definitions for FIMD controller
+
+config S5P64XX_SETUP_FB
+	bool
+	depends on FB_S3C_V2
+	default y
+	help
+	  Common setup code for FIMD controller.
+
+config S5P64XX_ADC
+        bool "S5P64XX ADC D/D support"
+        help
+         Analog to Digital conversion(ADC) D/D for S5P64XX support
+
+config S3C_PWM
+	bool "S3C PWM support"
+	select HAVE_PWM
+	help
+	  Support for exporting the PWM timer blocks via the pwm device system.
+
+choice
+	prompt "Voltage Control Device"
+	depends on CPU_FREQ
+	default	S5P64XX_LTC3714
+	help
+	 Select voltage control device for DVFS
+
+	config S5P64XX_LTC3714
+		bool "LTC3714 voltage regulator support"
+
+	config S5P6440_S5M8751
+		select MFD_S5M8751_I2C
+		bool "S5M8751 device support"
+endchoice
+  
+endif

@@ -1,0 +1,65 @@
+#
+# Configuration for FIMG-VG
+#
+
+config VIDEO_GVG
+	tristate "Samsung FIMG-VG Driver"
+	depends on CPU_S5P6440
+	default n
+	---help---
+	  This is a FIMG-VG(OpenVG accelerator) driver for Samsung S5P6440.
+
+choice
+        prompt "FIMG-VG memory allocation type"
+	depends on VIDEO_GVG
+	default VIDEO_GVG_USE_BOOTMEM
+
+config VIDEO_GVG_USE_BOOTMEM
+        bool "Use bootmem"
+	help
+		Use bootmem to allocate the tessellate memroy for FIMG-VG hardware.
+
+config VIDEO_GVG_USE_KMALLOC
+        bool "Use kmalloc"
+	help
+		Use kmalloc to allocate the tessellate memory for FIMG-VG hardware.
+endchoice
+
+config VIDEO_GVG_TESSELLATE_EDGE_MEM_SIZE
+	depends on VIDEO_GVG
+	int "FIMG-VG tessellate edge memory size in kbytes"
+	default "2048"
+
+config VIDEO_GVG_TESSELLATE_VERTEX_MEM_SIZE
+	depends on VIDEO_GVG
+	int "FIMG-VG tessellate vertex memory size in kbytes"
+	default "512"
+
+comment "VG resource memory configuration"
+
+config VIDEO_GVG_RESOURCE_MEM_BLOCK_SIZE
+	depends on VIDEO_GVG
+	int "FIMG-VG resource memory block size in kbytes"
+	default "2048"
+	help
+		The resource memory size to be allocated is
+		VIDEO_GVG_RESOURCE_MEM_BLOCK_SIZE * VIDEO_GVG_RESOURCE_MEM_BLOCK_NUM kbytes.
+
+config VIDEO_GVG_RESOURCE_MEM_BLOCK_NUM
+	depends on VIDEO_GVG
+	int "The number of FIMG-VG resource memory block"
+	default "3"
+	help
+		The resource memory size to be allocated is
+		VIDEO_GVG_RESOURCE_MEM_BLOCK_SIZE * VIDEO_GVG_RESOURCE_MEM_BLOCK_NUM kbytes.
+
+config VIDEO_GVG_MEMSIZE_EDGE
+	int
+	depends on VIDEO_GVG
+	default VIDEO_GVG_TESSELLATE_EDGE_MEM_SIZE
+
+config VIDEO_GVG_MEMSIZE_VERTEX
+	int
+	depends on VIDEO_GVG
+	default VIDEO_GVG_TESSELLATE_VERTEX_MEM_SIZE
+		

@@ -1,0 +1,2 @@
+# Add all local header files
+header-y += $(notdir $(wildcard $(srctree)/include/linux/broadcom/vc03/vchi/*.h))

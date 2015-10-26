@@ -1,0 +1,116 @@
+/dts-v1/;
+
+/ {
+	features {
+		family-name			= "TomTom GO";
+		project-name			= "SARNEN";
+		model-name			= "GO";
+		hardware-name			= "Sarnen";
+		machine-id			= <3801>;
+		device-serial			= "KV9415LE00FN";
+		device-type			= "SA";
+		device-class			= <0>;
+		fdt-recovery-key		= <
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+			0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		>;
+		fdt-signer-id			= "";
+		text-to-speech			= <1>;
+		handsfree			= <1>;
+		internal-mic			= <1>;
+		voice-recording			= <1>;
+		connect-ext-mic			= <0>;
+		sdcard				= <1>;
+		uart-id				= <2>;
+		has-gprs			= <0>;
+		has-tilt-sensor			= <1>;
+		has-bluetooth			= <1>;
+		bluetooth			= "BCM2070";
+		amplifier			= "EUA2011";
+		tft 				= "LMS501KF03";
+		wakeon-usb 			= <0>;
+	};
+
+	options {
+		bluetooth {
+			bt-name 			= "TomTom GO";
+			bt-class 			= <0x000408>;
+			bt-speed 			= <921600>;
+			bt-dev 				= "ttyS0";
+			bt-mac-address 			= "AA:BB:CC:DD:EE:FF";
+			bt-clock 			= <26000000>;
+
+		};
+
+		battery {
+			Vmaxf = <3900000>;
+			Vminf = <3400000>;
+			/* The battery model is composed as: packvendor_cellvendor_batterytype_batterycapacity */
+			battery-model			= "Sarnen_Foxlink_Maxell_653443LIR_1100";
+			battery-low-warning		= <16>;
+			battery-low-suspend		= <3>;
+			battery-min-resume		= <7>;
+			battery-sw-off-gprs		= <1>;
+			battery-sw-on-gprs		= <2>;
+			battery-sw-off-sound		= <16>;
+			battery-sw-on-sound		= <31>;
+			backlight-suspend-level		= <10>;
+		};
+
+		audio {
+			mic-type			= <1>;	/* 1 = rubber mic, 2 = SMT mic */
+			has-booster			= <1>;
+		};
+
+		gprs {
+			antenna-type			= "US";
+			type				= "FARO";			
+			dev				= "ttyS1";
+		};
+
+		gps {
+			type 				= "GOGPS_BARRACUDA";
+			ephemeris			= <1>;			
+			dev				= "ttyS3";
+			lna				= "ext";
+		};
+
+		usb-ether 
+		{
+			host-mac-address		= "02:04:06:08:0A:0C";
+		};
+
+
+		usbmode 
+		{
+			/* usbmode related , the id of the usbmode driver needs change */
+			bus-id				= <1>; 
+		};
+
+		backlight 
+		{
+			brightness-levels 
+			{
+				charging		= <33>;
+				mass-storage		= <30>;
+				system-update		= <30>;
+				navcore			= <55>;
+				night-mode		= <30>;
+				screen-calibration	= <55>;
+			};
+		};
+
+	};
+
+	/* list of tomtom methods that need implementing: adding items as devices
+	will cause tt_setup to register the services */
+	devices 
+	{
+		tomtom-bcm-bluetooth-bcm2070 {};
+		tomtom-bcm-touchscreen-resistive {};
+		tomtom-bcm-amplifier-eua2011 {};
+		tomtom-bcm-tilt-ts1003-al {};
+	};
+};

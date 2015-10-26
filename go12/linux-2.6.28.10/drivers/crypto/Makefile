@@ -1,0 +1,11 @@
+obj-$(CONFIG_CRYPTO_DEV_PADLOCK_AES) += padlock-aes.o
+obj-$(CONFIG_CRYPTO_DEV_PADLOCK_SHA) += padlock-sha.o
+obj-$(CONFIG_CRYPTO_DEV_GEODE) += geode-aes.o
+obj-$(CONFIG_CRYPTO_DEV_HIFN_795X) += hifn_795x.o
+obj-$(CONFIG_CRYPTO_DEV_TALITOS) += talitos.o
+obj-$(CONFIG_CRYPTO_DEV_IXP4XX) += ixp4xx_crypto.o
+obj-$(CONFIG_CRYPTO_DEV_BCM476X_SPU) += bcm476x_spu.o
+obj-$(CONFIG_CRYPTO_DEV_AES_SPU) += aes_spu.o
+obj-$(CONFIG_CRYPTO_DEV_SHA1_SPU) += sha1_spu.o
+obj-$(CONFIG_CRYPTO_DEV_MD5_SPU) += md5_spu.o
+obj-$(CONFIG_CRYPTO_DEV_DES_SPU) += des_spu.o

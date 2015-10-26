@@ -1,0 +1,7 @@
+# Add sub-directories to export
+ifneq ($(wildcard $(srctree)/include/linux/broadcom/vc03/vchi/Kbuild),)
+header-y += vchi/
+endif
+
+# Add all local header files
+header-y += $(notdir $(wildcard $(srctree)/include/linux/broadcom/vc03/*.h))
