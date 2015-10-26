@@ -1,0 +1,8 @@
+http://www.tomtom.com/gpl/ttlinux194.2.patch.gz
+http://www.tomtom.com/gpl/glibc-2.1.2.tar.gz
+http://www.tomtom.com/gpl/glibc-linuxthreads-2.1.2.tar.gz
+http://www.tomtom.com/gpl/busybox-1.00-pre8.tar.gz
+http://www.tomtom.com/gpl/modutils-2.3.6.tar.gz
+http://handhelds.org/download/toolchain/archive/arm-linux-toolchain-post-2.2.13.tar.gz
+http://www.tomtom.com/gpl/toolchain-gcc-2.95.2-glibc-2.1.2.diff
+http://www.tomtom.com/gpl/ttsysbuild-20041027a.tar.gz

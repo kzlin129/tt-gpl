@@ -1,0 +1,134 @@
+Toolchain
+
+The compiler toolchain used to build all the software for the ARM11 TomTom Linux platform. 
+We based our toolchain on CodeSourcery toolchain 2009q1-203:
+
+Base toolchain 
+TomTom modifications are: Tomtom mods.diff
+
+
+The Linux kernel is based on release 2.6.28. Each release consist of a kernel and corresponding initramfs:
+
+linux-kernel-2.6.28-tt714611
+initramfs-tt714611
+linux-kernel-2.6.28-tt725907
+initramfs-tt725907
+linux-kernel-2.6.28-tt765965
+initramfs-tt765965
+linux-kernel-2.6.28-tt768946
+initramfs-tt768946
+linux-kernel-2.6.28-tt824205
+initramfs-tt824205
+linux-kernel-2.6.28-tt855479
+initramfs-tt855479
+linux-kernel-2.6.28-tt1054784
+initramfs-tt1054784
+linux-kernel-2.6.28-tt1106601
+initramfs-tt1106601
+U-boot is based on release 1.3.4:
+
+U-boot-1.3.4-tt713650
+u-boot-1.3.4-tt1067243
+linux-kernel-2.6.28-ttxxxxxx, initramfs-ttxxxxxx and u-boot-1.3.4-ttxxxxxx link to the following files:
+
+u-boot-1.3.4-tt713650.tar.gz
+initramfs-tt714611.tar.gz
+initramfs-tt725907.tar.gz
+initramfs-tt765965.tar.gz
+initramfs-tt768946.tar.gz
+initramfs-tt824205.tar.gz
+initramfs-tt855479.tar.gz
+linux-kernel-2.6.28-tt714611.tar.gz
+linux-kernel-2.6.28-tt725907.tar.gz
+linux-kernel-2.6.28-tt765965.tar.gz
+linux-kernel-2.6.28-tt768946.tar.gz
+linux-kernel-2.6.28-tt824205.tar.gz
+linux-kernel-2.6.28-tt855479.tar.gz
+tt1017068.tar.gz
+linux-kernel-2.6.28-tt1169602.tar.gz
+linitramfs-tt1169602.tar.gz
+linux-kernel-2.6.28-tt1229603.tar.gz
+initramfs-tt1229603.tar.gz
+
+U-boat is based on release 1.3.4
+
+u-boot-1.3.4-tt713650
+u-boot-1.3.4-tt865401
+u-boot-1.3.4-tt1167782
+System support
+
+Apmd (advanced power manager) 3.2.2: apmd@547972apmd-3.2.2-tt1163004.tar.gz
+upstart 0.6.3: upstart-0.6@533054
+upstart-0.63-tt1161694.tar.gz
+udev (device manager) 0.122: udev@533054udev-122-tt1163680.tar.gz
+busybox (system tools) 1.12.2: busybox@533054busybox-1.12.2-tt1161694.tar.gz
+setrlimit (set resource limits) 0.1: setrlimit@533054setrlimit-1.3.0-tt1161694.tar.gz
+cppunit: cppunit-1.12.0-tt1165334.tar.gz
+dtc (device-tree compiler) 1.2.0: dtc@547972.tar.bz2dtc-tt1161694
+dnsmasq: dnsmasq-tt1161694.tar.gz
+dosfstools: dosfstools-tt1165090
+glib 2.10.3: glib-2.10.3-tt1164790.tar.gz
+opkg r212: opkg@533054opkg-r212-tt1163230
+oprofile-tools (profiling tools) 0.9.6: oprofile@533054
+mksquashfs 4.1: mksquashfs-4.1-tt1169420
+libpango1.26.0: libpango-1.26.0-tt1166174
+lvm2: tt1166449
+e2fsprogs 1.41.3:e2fsprogs-1.41.3-tt1165180
+Webkit browser: browser@566879webkit-svn-49229-tt1169483webkit-svn-49229-tt1218029
+sudo 1.7.2p5: sudo@534958
+Webkit browser browser@566879
+
+webkit-tt1065166
+Bluetooth stack 3.36:
+
+Bluez hcidump (debug tool): bluez-hcidump@533054bluez-hcidump-1.41-tt1164467
+Bluez tools: bluez-utils@533054bluez-utils-3.36-tt1161694.tar.gz
+Bluetooth library: libbluetooth2@533054bluez-libs-3.36-tt1161694
+obexftpd (obex protocol support) 0.20: obexftp@533054obexftpftp-0.20-tt1161694
+Alsa sound stack 1.0.16:
+
+alsa-utils@533054alsa-utils-1.0.16-tt1169484
+alsa-lib@533054alsa-lib-1.0.16-tt1164144
+Plugz 0.42 (Bluetooth-ALSA plugins) plugz@533054
+Dbus, desktop bus 1.2.16:
+
+Daemon: dbus@533054
+Glib bindings: dbus-glib@533054
+Graphical format support:
+
+Png 1.2.37: libpng@533054.tar.bz2
+Jpeg 6b: libjpeg@580798.tar.bz2
+jpeg-tt1113633
+Audio codec support:
+
+Vorbis Tools 1.0: vorbis-tools-1.0@580798
+Ogg Vorbis Tremor (svn 17492): Ogg_Vorbis_Tremor@580978
+libvorbis 1.0: libvorbis-1.0@580798
+libogg 1.0: libogg-1.0@580798
+Networking tools and utilities:
+
+revinetd (Reverse port redirector) 1.0.3: revinetd@541130revinetd-1.0.2-tt1161694
+ppp (point to point) daemon 2.4.4: pppd@533054
+dnsmasq (DNS caching daemon) 2.47: dnsmasq@533054
+dropbear (embedded ssh server) 0.52: dropbear@533054
+curl 7.19.5: curl@540823
+Other libraries:
+
+libexpat (xml parsing library) 2.0.1: expat@533054
+libxml2 (xml parsing library) 2.7.3: libxml2@533054
+libopenssl (cryptographic library) 0.9.8: openssl@533054
+libfreetype2 (Truetype font handling library) 2.3.9: libfreetype2@533054
+freetype-2.3.9-tt863294
+zlib 1.2.3: zlib@533054
+syncml (SyncML protocol support) 1.0: syncml@533054
+syncml-tt1167406.tar.gz
+libcapts-bin (Capacitive touchscreen support) tslib@533054
+tslib-1.0-tt1165435
+libpango 1.26.0 libpango-1.26.0-tt862247
+TomTom Specific source code:
+
+Bluetooth inquiries, and service discovery daemon: blueserver@580798
+btserver@580798
+TomTom tool for interprocess communication: TTMP@580798
+Touchscreen test application: tstestapps-tt1213221
+tstestapps-tt1246486

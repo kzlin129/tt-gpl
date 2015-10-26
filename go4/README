@@ -1,0 +1,114 @@
+README for the source code of the parts of TomTom GO software that fall under open source licenses, TomTom GO version 4 software
+
+This is a document describing the distribution of the source code used on the TomTom GO device with version 4 of the navigation software, which falls under the GNU General Public License (the GPL). 
+
+For more information about the GPL, see: 
+http://www.gnu.org/licenses/gpl.html
+
+You can download a copy of the GPL here: 
+http://www.tomtom.com/gpl/GPL.txt
+
+The GPL'ed source code used in TomTom GO falls into a number of categories: 
+The Linux kernel for ARM, with modifications by TomTom.
+The GNU C library (glibc), which is used unmodified.
+BusyBox, which is used unmodified.
+Modutils (some executables on the ramdisk are from modutils).
+Compiler tool chain (a small patch was made to the compiler tool chain source).
+TomTom build tools (a package with a ramdisk, makeimage post processor, and little example hello world application).
+A detailed description of these categories follows, including information on where to download this source code and/or its modifications. 
+
+1. The Linux Kernel
+
+TomTom GO currently uses version 2.4.18-rmk6 of the ARM Linux kernel, with modifications by TomTom, which provide drivers for the specific TomTom GO hardware. The ARM Linux kernel is normally provided in the form of a patch, relative to the "official" Linux kernel, as released by Linus Torvalds and/or the current kernel maintainer. The modifications for TomTom GO are provided both as a patch, relative to a specific ARM Linux kernel, and as a full archive containing the complete kernel source, after incorporating all patches. 
+
+Usually, one should download the Linux kernel source code from one of the official mirror sites: 
+
+http://www.kernel.org/mirrors/
+
+The specific base version used for TomTom GO is: 
+
+http://www.kernel.org/pub/linux/kernel/v2.4/linux-2.4.18.tar.gz
+
+Official ARM Linux patches can be downloaded from the ARM Linux site: 
+
+http://www.arm.linux.org.uk/developer/
+
+The specific version of the patch used for TomTom GO is: 
+
+ftp://ftp.arm.linux.org.uk/pub/armlinux/source/kernel-patches/v2.4/patch-2.4.18-rmk6.gz
+
+Finally, the patch containing TomTom's specific modifications for TomTom GO can 
+be downloaded here: 
+
+http://www.tomtom.com/gpl/ttlinux194.2.patch.gz
+
+There is also a tar archive, containing the full source code, with all these 
+patches included: 
+
+http://www.tomtom.com/gpl/ttlinux194.2.tar.gz
+
+Should you want a copy of the source on CD, please submit your request on this page. Please leave your complete address details and specify that it is about the "TomTom GO Linux Kernel" CD. Please note that you will be charged for the cost of preparing and mailing the CD to you. 
+2. The GNU C Library (glibc)
+
+TomTom GO currently uses the GNU C library, version 2.1.2, without any modifications. The official glibc sites are: 
+
+http://www.gnu.org/software/libc/
+http://sources.redhat.com/glibc/
+
+The glibc releases are available at: 
+
+http://ftp.gnu.org/gnu/glibc/
+
+and its mirrors, see: 
+
+http://www.gnu.org/server/list-mirrors.html
+
+The specific version of glibc used for TomTom GO can be downloaded here: 
+
+http://ftp.gnu.org/gnu/glibc/glibc-2.1.2.tar.gz
+http://ftp.gnu.org/gnu/glibc/glibc-linuxthreads-2.1.2.tar.gz
+
+or if the GNU site or its mirrors are inaccessible to you, here: 
+
+http://www.tomtom.com/gpl/glibc-2.1.2.tar.gz
+http://www.tomtom.com/gpl/glibc-linuxthreads-2.1.2.tar.gz
+3. BusyBox
+
+TomTom GO currently uses BusyBox, version 1.00-pre8, without any modifications. The official BusyBox site is: 
+
+http://busybox.net/
+
+The BusyBox releases are available at: 
+
+http://busybox.net/downloads/
+
+The specific version of BusyBox used for TomTom GO can be downloaded here: 
+
+http://busybox.net/downloads/busybox-1.00-pre8.tar.gz
+
+or if the GNU site or its mirrors are inaccessible to you, here: 
+
+http://www.tomtom.com/gpl/busybox-1.00-pre8.tar.gz
+
+4. Modutils
+
+The ramdisk contains executables from the package modutils, which can be found here 
+http://www.kernel.org/pub/linux/utils/kernel/modutils/v2.3/modutils-2.3.6.tar.gz
+
+Alternatively, it can be downloaded from 
+http://www.tomtom.com/gpl/modutils-2.3.6.tar.gz
+
+5. Compiler tool chain
+
+The software on the TomTom GO was compiled with the gcc 2.95.2 tool chain. This can be found at: 
+http://handhelds.org/download/toolchain/archive/arm-linux-toolchain-post-2.2.13.tar.gz
+
+A small patch was made to this tool chain: 
+http://www.tomtom.com/gpl/toolchain-gcc-2.95.2-glibc-2.1.2.diff
+
+6. Building a ttsystem file
+
+The ttsystem file on the SD is the file that is launched from the boot loader in the hardware. A small example that builds an entire ttsystem file can be found here: 
+http://www.tomtom.com/gpl/ttsysbuild-20041027a.tar.gz
+
+To build, unpack with tar zxvf, go into the ttsysbuild directory, unpack the Linux kernel there (so ttlinux becomes a subdirectory of ttsysbuild), and run ./build.sh in the ttsysbuild directory. This should build everything, including the Linux kernel and a small example hello world application, and generate a file ttsystem. This file ttsystem can then be copied to the SD. Inserting the SD should consequently launch the hello world application. 

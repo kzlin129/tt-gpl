@@ -1,0 +1,208 @@
+README for the source code of the parts of TomTom GO software that fall under open source licenses, TomTom GO version 5.4* software (initially released with the TomTom ONE)
+
+This is a document describing the distribution of the source code used on the TomTom GO, RIDER and ONE devices with version 5.4* of the navigation software, which falls under the GNU General Public License (the GPL). 
+
+For more information about the GPL, see: 
+http://www.gnu.org/licenses/gpl.html
+
+You can download a copy of the GPL here: 
+http://www.tomtom.com/gpl/GPL.txt
+
+The GPL'ed source code used in TomTom GO falls into a number of categories: 
+The compiler toolchain used to build all the software.
+The Linux kernel for ARM, with modifications by TomTom.
+BlueZ libraries and utilities.
+Other third party software under GPL license.
+TomTom software under GPL license.
+A detailed description of these categories follows, including information on where to download this source code and/or its modifications. 
+
+If you want to build your own software to run on the TomTom GO, RIDER or ONE devices, and need information or suggestions on how to do so, we suggest taking a look at the independent OpenTom project, on its website: http://www.opentom.org/. 
+However, please note that TomTom has no control over the OpenTom project or its websites. Therefore TomTom does not officially support it, and takes no responsibility for any problems you might have using it. 
+
+1. Toolchain
+
+The compiler toolchain used to build all the software for the ARM Linux platform consists of a number of components:
+GNU binutils 2.14.90.0.5
+
+The assembler, linker and various other tools to operate on object files, libraries and executables. The official site for GNU binutils is: 
+http://www.gnu.org/software/binutils/
+
+Whereas the base version we used comes from: 
+http://www.kernel.org/pub/linux/devel/binutils/binutils-2.14.90.0.5.tar.gz
+
+The complete source code for our version can be found here: 
+http://www.tomtom.com/gpl/binutils-2.14.90.0.5-20050405a.tar.gz
+
+Diff against the base version: 
+http://www.tomtom.com/gpl/binutils-2.14.90.0.5-20050405a.diff.gz
+GNU gcc 3.3.4
+
+The GNU C and C++ compilers. The official site for GNU gcc is: 
+http://www.gnu.org/software/gcc/
+
+The base version we used can be downloaded from any GCC mirror site: 
+http://www.gnu.org/software/gcc/mirrors.html
+
+The complete source code for our version can be found here: 
+http://www.tomtom.com/gpl/gcc-3.3.4-20050405a.tar.gz
+
+Diff against the base version: 
+http://www.tomtom.com/gpl/gcc-3.3.4-20050405a.diff.gz
+glibc 2.3.2
+
+The GNU C runtime library. The official site for glibc is: 
+http://www.gnu.org/software/libc/
+
+The base version we used can be downloaded from any GNU mirror site: 
+http://www.gnu.org/server/list-mirrors.html
+
+The complete source code for our version can be found here: 
+http://www.tomtom.com/gpl/glibc-2.3.2-20050405a.tar.gz
+
+Diff against the base version: 
+http://www.tomtom.com/gpl/glibc-2.3.2-20050405a.diff.gz
+gdb 6.3
+
+The GNU debugger. The official site for gdb is: 
+http://www.gnu.org/software/gdb/
+
+The base version we used can be downloaded from any GNU mirror site: 
+http://www.gnu.org/server/list-mirrors.html
+
+The complete source code for our version can be found here: 
+http://www.tomtom.com/gpl/gdb-6.3-20050502a.tar.gz
+
+Diff against the base version: 
+http://www.tomtom.com/gpl/gdb-6.3-20050502a.diff.gz
+However, please note that building such a toolchain targeting ARM Linux, hosted on x86 Linux or another platform, with these separate components from scratch is NOT trivial, and can therefore not be supported by TomTom. However, we provide some precompiled, binary versions for your convenience. 
+Linux x86 toolchain: 
+http://www.tomtom.com/gpl/toolchain_redhat_gcc-3.3.4_glibc-2.3.2-20050428a.tar.gz
+
+This version was built on Red Hat Enterprise Linux 3 for x86, but it should also work on most other recent x86 Linux distributions, as long as you have a 2.4 or higher kernel, and glibc 2.3.2 or higher. You need to unpack it in a directory /usr/local/cross, and add /usr/local/cross/gcc-3.3.4_glibc-2.3.2/bin to your PATH environment variable to be able to use it.
+Cygwin x86 toolchain: 
+http://www.tomtom.com/gpl/toolchain_cygwin_gcc-3.3.4_glibc-2.3.2-20050428a.tar.gz
+
+This version was built on Windows XP Professional, using a recent (March 2005) Cygwin installation, but it should also work on more recent Cygwin installations. You need to unpack it in a directory /usr/local/cross, and add /usr/local/cross/gcc-3.3.4_glibc-2.3.2/bin to your PATH environment variable to be able to use it.
+If you really need to build your own toolchain from scratch, you are advised to use crosstool, which can be found here: 
+http://kegel.com/crosstool/
+
+Please note that TomTom does NOT support crosstool. 
+
+2. The Linux Kernel
+
+TomTom GO uses version 2.6.10 of the Linux kernel, with modifications by TomTom, which provide drivers for the specific TomTom GO hardware. Since the start of the 2.6.x kernel series, ARM Linux support has been in the main kernel source code, as released by Linus Torvalds. 
+
+The official site for the Linux kernel is: 
+http://www.kernel.org/
+
+The base version we used can be downloaded from any kernel mirror site: 
+http://www.kernel.org/mirrors/
+
+The complete source code for our version with build number 1008 can be found here: 
+http://www.tomtom.com/gpl/golinux-tt1008.tar.gz
+
+Diff of this version against the base version: 
+http://www.tomtom.com/gpl/golinux-tt1008.diff.gz
+
+The complete source code for our version with build number 1011 can be found here: 
+http://www.tomtom.com/gpl/golinux-tt1011.tar.gz
+
+Diff of this version against the base version: 
+http://www.tomtom.com/gpl/golinux-tt1011.diff.gz
+
+3. BlueZ libraries and utilities
+
+TomTom GO uses version 2.15 of the user-space BlueZ libraries and utilities. The kernel-space BlueZ support is the default version built into version 2.6.10 of the Linux kernel. 
+
+The official site for BlueZ is: 
+http://www.bluez.org/
+
+The base versions we used can be downloaded from: 
+http://www.bluez.org/download.html
+
+The complete source code for our version can be found here: 
+http://www.tomtom.com/gpl/bluez-2.15-20050517a.tar.gz
+
+Diffs against base versions: 
+http://www.tomtom.com/gpl/bluez-libs-2.15-20050517a.diff.gz
+http://www.tomtom.com/gpl/bluez-utils-2.15-20050517a.diff.gz
+http://www.tomtom.com/gpl/bluez-hcidump-1.18-20050517a.diff.gz
+
+4. Other third party software
+
+TomTom GO also contains some other software that is licensed under the GPL: 
+BusyBox 1.00
+
+This is the "swiss army knife" application, used as the shell, and contains numerous other standard Linux utilities. The official site for BusyBox is: 
+http://busybox.net/
+
+The version we used (unmodified) can be downloaded from: 
+http://busybox.net/downloads/
+
+The complete source code can also be found here: 
+http://www.tomtom.com/gpl/busybox-1.00-20050405a.tar.gz
+ppp 2.4.2
+
+This implements the PPP protocol, used for dial-up networking. The official site for ppp is: 
+http://ppp.samba.org/
+
+The base version we used can be downloaded from: 
+http://ppp.samba.org/ppp/download.html
+
+The complete source code for our version can be found here: 
+http://www.tomtom.com/gpl/ppp-2.4.2-20050405a.tar.gz
+
+Diff against the base version: 
+http://www.tomtom.com/gpl/ppp-2.4.2-20050405a.diff.gz
+lrzsz 0.12.20
+
+This implements the x/y/zmodem file transfer protocols, used to easily upload and download files to and from TomTom GO. The official site for lrzsz is: 
+http://www.ohse.de/uwe/software/lrzsz.html
+
+The version we used (unmodified) can be downloaded from the same page. 
+
+The complete source code can also be found here: 
+http://www.tomtom.com/gpl/lrzsz-0.12.20-20050405a.tar.gz
+picocom 1.4
+
+This is a simple terminal emulator program. The official site for picocom is: 
+http://efault.net/npat/hacks/picocom/
+
+The base version we used can be downloaded from: 
+http://efault.net/npat/hacks/picocom/dist/
+
+The complete source code for our version can be found here: 
+http://www.tomtom.com/gpl/picocom-1.4-20050405a.tar.gz
+
+Diff against the base version: 
+http://www.tomtom.com/gpl/picocom-1.4-20050405a.diff.gz
+flash_erase
+
+This program is used to erase flash memory, and is a utility from the Memory Technology Device (MTD) subsystem for Linux. The official MTD site is: 
+http://www.linux-mtd.infradead.org/
+
+The version we used (unmodified) can be downloaded from: 
+http://www.linux-mtd.infradead.org/source.html
+
+The complete source code can also be found here: 
+http://www.tomtom.com/gpl/flash_erase-20050405a.tar.gz
+
+5. TomTom GPL software
+
+TomTom GO also contains some applications for Bluetooth and Dial-Up Networking support, that make use of the BlueZ libraries, and therefore are also licensed under the GPL: 
+csrinit
+
+This program is used to initialize the CSR Bluetooth chip in certain TomTom GO models. The complete source code can be found here: 
+http://www.tomtom.com/gpl/csrinit-20060313a.tar.gz
+blueserver
+
+This program is used for Bluetooth inquiries, and service discovery. The complete source code can be found here: 
+http://www.tomtom.com/gpl/blueserver-20060313a.tar.gz
+blueaclserver
+
+This program is used to communicate with mobile phones. The complete source code can be found here: 
+http://www.tomtom.com/gpl/blueaclserver-20051017a.tar.gz
+apnd
+
+This program is used to set up a DUN connection. The complete source code can be found here: 
+http://www.tomtom.com/gpl/apnd-20060313a.tar.gz
